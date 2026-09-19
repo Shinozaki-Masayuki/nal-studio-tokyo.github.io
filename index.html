@@ -323,6 +323,21 @@
     max-width:440px; margin-top:44px;
   }
   .hero-ig-follow{margin-top:20px;}
+
+  /* ---------- news (hero) ---------- */
+  .hero-news{
+    margin-top:28px; max-width:560px;
+    padding:16px 20px; border:1px solid var(--line); border-radius:14px; background:var(--panel-2);
+    display:flex; align-items:baseline; gap:16px;
+  }
+  .news-label{font-size:11px; font-weight:500; letter-spacing:0.15em; color:var(--holo-b); flex-shrink:0;}
+  .news-list{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .news-list li{font-size:13px; line-height:1.8; color:var(--sub);}
+  .news-list a{
+    color:var(--white); text-decoration:underline; text-decoration-color:var(--sub-dim); text-underline-offset:3px;
+    transition:color .25s ease, text-decoration-color .25s ease;
+  }
+  .news-list a:hover, .news-list a:focus-visible{color:var(--holo-b); text-decoration-color:var(--holo-b);}
   .ig-card{
     position:relative; display:block; aspect-ratio:1/1; overflow:hidden; border-radius:12px;
     background:var(--panel-2); border:1px solid var(--line);
@@ -849,6 +864,7 @@
     .results-grid{grid-template-columns:1fr;}
     .results-grid > .result-card:last-child{grid-column:auto;}
     .hero-ig-grid{max-width:100%; gap:8px;}
+    .hero-news{flex-direction:column; gap:6px; padding:14px 16px;}
     .nav{padding:16px 20px;}
   }
 
@@ -988,6 +1004,13 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-grad)" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="url(#ig-grad)" stroke="none"/></svg>
         Instagram @nalstudio_tokyo
       </a>
+
+      <div class="hero-news">
+        <h2 class="news-label mono">NEWS</h2>
+        <ul class="news-list">
+          <li>「<a href="https://www.tfm.co.jp/lock/niziu/98832?utm_source=chatgpt.com" target="_blank" rel="noopener">TOKYO FM SCHOOL OF LOCK!</a>」に取材されました。</li>
+        </ul>
+      </div>
     </div>
 
     <div class="marquee-wrap">
