@@ -1,1 +1,13 @@
+version: 2
+updates:
+  # GitHub Actions（actions/checkout など）の更新を月1回チェックし、PRで知らせる
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
 
+  # Instagram同期スクリプトの依存ライブラリ（requests / PyNaCl）の脆弱性・更新を月1回チェックする
+  - package-ecosystem: "pip"
+    directory: "/scripts"
+    schedule:
+      interval: "monthly"
