@@ -118,6 +118,20 @@
   .info-mail:hover, .info-mail:focus-visible{color:var(--holo-b);}
   .info-mail:hover svg, .info-mail:focus-visible svg{stroke:var(--holo-b);}
 
+  /* PR：代表カードより小さく・淡く */
+  .info-card-sub{margin-top:16px; padding:28px 36px;}
+  .info-card-sub .info-role{font-size:11px; letter-spacing:0.18em; margin-bottom:10px; color:#74747c;}
+  .info-sub-name{font-size:15px; font-weight:500; letter-spacing:0.26em; color:#a2a2aa; margin-bottom:6px;}
+  .info-sub-roman{font-size:10px; letter-spacing:0.28em; color:#74747c;}
+  .info-sub-mail{
+    display:inline-flex; align-items:center; gap:10px; margin-top:18px;
+    font-size:clamp(12px, 3.2vw, 13px); letter-spacing:0.05em; color:#80808a; overflow-wrap:anywhere;
+    transition:color .25s ease;
+  }
+  .info-sub-mail svg{width:18px; height:18px; flex-shrink:0; stroke:#80808a; fill:none; stroke-width:1.5; stroke-linejoin:round; transition:stroke .25s ease;}
+  .info-sub-mail:hover, .info-sub-mail:focus-visible{color:var(--holo-b);}
+  .info-sub-mail:hover svg, .info-sub-mail:focus-visible svg{stroke:var(--holo-b);}
+
   footer{border-top:1px solid var(--line); padding:40px 0;}
   .foot-bottom{display:flex; justify-content:space-between; color:var(--sub-dim); font-size:12px; flex-wrap:wrap; gap:10px; max-width:1180px; margin:0 auto; padding:0 32px;}
 
@@ -131,8 +145,11 @@
     .wrap{padding:0 20px;}
     .nav{padding:16px 20px;}
     .info-card{padding:32px 24px;}
+    .info-card-sub{padding:22px 24px;}
     .info-name-ja{letter-spacing:0.2em;}
     .info-name-roman{letter-spacing:0.25em;}
+    .info-sub-name{letter-spacing:0.2em;}
+    .info-sub-roman{letter-spacing:0.22em;}
   }
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{transition:none !important;} }
 </style>
@@ -184,6 +201,16 @@
         <a class="info-mail mono" href="mailto:info@nalstudio-tokyo.com" aria-label="メールを送る: info@nalstudio-tokyo.com">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6.5l9 7 9-7"/></svg>
           info@nalstudio-tokyo.com
+        </a>
+      </div>
+
+      <div class="info-card info-card-sub">
+        <div class="info-role">PR</div>
+        <div class="info-sub-name">篠崎 真之</div>
+        <div class="info-sub-roman mono">SHINOZAKI MASAYUKI</div>
+        <a class="info-sub-mail mono" href="mailto:pr@nalstudio-tokyo.com" aria-label="メールを送る: pr@nalstudio-tokyo.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6.5l9 7 9-7"/></svg>
+          pr@nalstudio-tokyo.com
         </a>
       </div>
     </div>
