@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIN | INSTRUCTOR - NAL STUDIO TOKYO</title>
 <meta name="description" content="NAL STUDIO TOKYOインストラクター LINのプロフィール。ReoNa・Brightなどのバックダンサーやアイドル候補生レッスンでの指導実績を持つダンサーが担当するクラスをご紹介。">
@@ -246,15 +248,7 @@
   </div>
 </footer>
 
-<script>
-  var navToggle = document.getElementById('nav-toggle');
-  document.querySelectorAll('.nav-mobile-panel a').forEach(function(a){
-    a.addEventListener('click', function(){ navToggle.checked = false; });
-  });
-  window.addEventListener('resize', function(){
-    if (window.innerWidth > 860) navToggle.checked = false;
-  });
-</script>
+<script src="js/nav.js" defer></script>
 
 </body>
 </html>

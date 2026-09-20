@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NAL STUDIO TOKYO | 新宿 K-POPダンススタジオ</title>
@@ -837,7 +837,9 @@
     .stage-arrow{transform:rotate(90deg); padding:4px 0;}
     .skillcheck-panel{grid-template-columns:1fr; gap:24px;}
     .skillcheck-route{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:24px;}
-    section{padding:96px 0;}
+    html{scroll-padding-top:88px;}
+    section{padding:56px 0;}
+    .sec-head{margin-bottom:36px;}
   }
   @media (max-width:700px){
     .hero{padding-top:104px;}
@@ -1730,30 +1732,8 @@
   </div>
 </footer>
 
-<script>
-  var navToggle = document.getElementById('nav-toggle');
-  document.querySelectorAll('.nav-mobile-panel a').forEach(function(a){
-    a.addEventListener('click', function(){ navToggle.checked = false; });
-  });
-  window.addEventListener('resize', function(){
-    if (window.innerWidth > 860) navToggle.checked = false;
-  });
-
-  fetch('data/instagram-posts.json')
-    .then(function(res){ return res.json(); })
-    .then(function(data){
-      var grid = document.getElementById('ig-grid');
-      if (!grid || !data.posts) return;
-      grid.innerHTML = data.posts.slice(0, 3).map(function(post){
-        var caption = (post.caption || '').replace(/"/g, '&quot;');
-        return '<a class="ig-card" href="' + post.permalink + '" target="_blank" rel="noopener">' +
-          '<img src="' + post.image + '" alt="' + (caption || 'Instagram post') + '" loading="lazy">' +
-          '<span class="ig-card-overlay"><span class="ig-card-caption">' + caption + '</span></span>' +
-        '</a>';
-      }).join('');
-    })
-    .catch(function(err){ console.error('Instagram posts load failed:', err); });
-</script>
+<script src="js/nav.js" defer></script>
+<script src="js/instagram.js" defer></script>
 
 </body>
 </html>
