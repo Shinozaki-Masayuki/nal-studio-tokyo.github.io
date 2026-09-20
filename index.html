@@ -196,16 +196,6 @@
   }
   .hero-inner{position:relative; z-index:2; width:100%;}
 
-  .eyebrow{
-    display:flex; align-items:center; gap:12px;
-    font-size:12px; letter-spacing:0.18em; color:var(--sub);
-    margin-bottom:28px;
-  }
-  .eyebrow .dot{
-    width:6px; height:6px; border-radius:50%; background:var(--holo-grad);
-    box-shadow:0 0 12px var(--holo-b);
-  }
-
   .hero-logo{
     width:min(560px, 70vw);
     height:auto;
@@ -306,11 +296,6 @@
     display:flex; align-items:flex-end; justify-content:space-between;
     gap:24px; margin-bottom:64px; flex-wrap:wrap;
   }
-  .sec-num{
-    font-size:12px; color:var(--sub-dim); letter-spacing:0.15em; margin-bottom:14px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .sec-num::before{content:''; width:24px; height:1px; background:var(--holo-grad);}
   .sec-title{
     font-family:'Unbounded', sans-serif; font-weight:800;
     font-size:clamp(30px, 4vw, 48px); line-height:1.1;
@@ -998,7 +983,6 @@
     <div class="hero-glow"></div>
     <div class="hero-glow b"></div>
     <div class="wrap hero-inner">
-      <div class="eyebrow"><span class="dot"></span>SHINJUKU, TOKYO — K-POP DANCE STUDIO</div>
       <img src="images/logo.png" alt="NAL STUDIO" class="hero-logo" width="852" height="570" fetchpriority="high">
       <h1><span class="holo-text">新たなスタート</span>を、<span class="line2">NAL STUDIOで。</span></h1>
       <div class="hero-ig-grid" id="ig-grid">
@@ -1024,7 +1008,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">NEWS</div>
           <h2 class="sec-title">NEWS</h2>
         </div>
       </div>
@@ -1049,8 +1032,7 @@
 
       </div>
 
-      <div class="sec-num mono" style="margin-top:80px;">REPRESENTATIVE</div>
-      <div class="about-grid">
+      <div class="about-grid" style="margin-top:80px;">
         <div class="profile-card">
           <img src="images/profile-seun.jpg" alt="SEUN" class="profile-photo" width="318" height="330" loading="lazy" decoding="async">
           <div>
@@ -1170,7 +1152,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">PRICE</div>
           <h2 class="sec-title">料金システム</h2>
         </div>
         <div class="sec-desc">目的別に選べる5つのクラス。アイドル・ダンサーを本気で目指す人から、趣味で楽しく学びたい人まで。すべて税込価格。</div>
@@ -1310,7 +1291,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">PROGRAM</div>
           <h2 class="sec-title">育成プログラム</h2>
         </div>
         <div class="sec-desc">本気でデビューを目指すあなたへ。基礎から応用・実践まで、段階的にスキルを伸ばしていく育成プログラムです。</div>
@@ -1453,7 +1433,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">INSTRUCTOR</div>
           <h2 class="sec-title">INSTRUCTOR</h2>
         </div>
         <div class="sec-desc">各クラスを担当するINSTRUCTOR陣。INSTRUCTORの画像をタップすると、活動実績の詳細をご覧いただけます。</div>
@@ -1565,7 +1544,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">TRACK RECORD</div>
           <h2 class="sec-title">指導実績</h2>
         </div>
         <div class="sec-desc">SEUNによる指導を受け、現在メディアで活躍しているアーティストの皆さんです。確かな指導実績の一部をご紹介します。</div>
@@ -1590,7 +1568,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">ACCESS</div>
           <h2 class="sec-title">アクセス</h2>
         </div>
       </div>
@@ -1627,7 +1604,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">RENTAL STUDIO</div>
           <h2 class="sec-title">レンタル<br>スタジオ</h2>
         </div>
         <div class="sec-desc">ダンス練習・リハーサル・撮影はもちろん、ヨガ・ピラティスからミーティングまで。用途に合わせて幅広くご活用いただけるレンタルスタジオです。</div>
@@ -1667,7 +1643,6 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="sec-num mono">SENDAI PROJECT</div>
           <h2 class="sec-title">NAL STUDIO <span class="holo-text">SENDAI</span></h2>
         </div>
         <p class="sec-desc">
@@ -1716,7 +1691,6 @@
   <section class="contact" id="contact">
     <div class="hero-glow" style="top:0; right:20%;"></div>
     <div class="wrap contact-inner">
-      <div class="sec-num mono" style="justify-content:center;">JOIN US</div>
       <p>体験レッスン・レンタルスタジオのご予約はWEB予約サイトより承っております。ご不明点はInstagramまたは公式LINEまで。</p>
       <div class="contact-btns">
         <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="btn-book">WEBで予約する</a>
