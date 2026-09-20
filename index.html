@@ -196,11 +196,19 @@
   }
   .hero-inner{position:relative; z-index:2; width:100%;}
 
+  .hero-brand{position:relative; width:min(560px, 70vw); margin-bottom:8px;}
   .hero-logo{
-    width:min(560px, 70vw);
+    width:100%;
     height:auto;
-    margin-bottom:8px;
     filter:drop-shadow(0 0 40px rgba(185,142,255,0.18));
+  }
+  /* ロゴ内「STUDIO」の直下に重ねる（位置・色はロゴ画像に合わせて調整） */
+  .hero-tagline{
+    position:absolute; left:0; top:82%; width:95.4%;
+    text-align:center; white-space:nowrap; pointer-events:none;
+    font-size:clamp(8px, calc(min(560px, 70vw) * 0.02), 12px);
+    font-weight:300; line-height:1; letter-spacing:0.34em; text-indent:0.34em;
+    color:#9ea1e6;
   }
 
   .hero h1{
@@ -985,7 +993,10 @@
     <div class="hero-glow"></div>
     <div class="hero-glow b"></div>
     <div class="wrap hero-inner">
-      <img src="images/logo.png" alt="NAL STUDIO" class="hero-logo" width="852" height="570" fetchpriority="high">
+      <div class="hero-brand">
+        <img src="images/logo.png" alt="NAL STUDIO" class="hero-logo" width="852" height="570" fetchpriority="high">
+        <p class="hero-tagline">YOUR STAGE. YOUR FUTURE.</p>
+      </div>
       <h1><span class="holo-text">新たなスタート</span>を、<span class="line2">NAL STUDIOで。</span></h1>
       <div class="hero-ig-grid" id="ig-grid">
         <!-- data/instagram-posts.json からJSで自動生成されます（最新3件） -->
@@ -1723,6 +1734,7 @@
         <a href="#access">ACCESS</a>
         <a href="#rental">RENTAL</a>
         <a href="#sendai">SENDAI</a>
+        <a href="info.html">INFO</a>
       </div>
     </div>
     <div class="foot-bottom mono">

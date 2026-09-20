@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFO | NAL STUDIO TOKYO</title>
+<meta name="description" content="NAL STUDIO TOKYOの代表 SEUN（島中 駿）へのお問い合わせ先のご案内です。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="INFO | NAL STUDIO TOKYO">
+<meta property="og:description" content="NAL STUDIO TOKYOの代表 SEUN（島中 駿）へのお問い合わせ先のご案内です。">
+<meta property="og:site_name" content="NAL STUDIO TOKYO">
+<meta property="og:locale" content="ja_JP">
+<link rel="icon" type="image/png" sizes="128x128" href="images/favicon.png?v=2">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#08080a;
+    --panel:#121215;
+    --panel-2:#18181c;
+    --line:#26262b;
+    --white:#f2f1ee;
+    --sub:#8a8a92;
+    --sub-dim:#5c5c62;
+    --holo-a:#6ee7f5;
+    --holo-b:#b98eff;
+    --holo-c:#ff6fb0;
+    --holo-grad: linear-gradient(100deg, var(--holo-a) 0%, var(--holo-b) 45%, var(--holo-c) 85%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
+  body{
+    background:var(--black); color:var(--white);
+    font-family:'Noto Sans JP', sans-serif;
+    overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--holo-b); color:#08080a;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'JetBrains Mono', monospace; letter-spacing:0.02em;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  .grain{
+    position:fixed; inset:0; z-index:999; pointer-events:none; opacity:0.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    background:rgba(8,8,10,0.72); backdrop-filter:blur(14px); border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1180px; margin:0 auto;}
+  .nav-logo{display:flex; align-items:center;}
+  .nav-logo-icon{height:34px; width:auto; display:block;}
+  .nav-links{display:flex; gap:36px; font-size:13px; letter-spacing:0.05em;}
+  .nav-links a{color:var(--sub); transition:color .25s ease; padding:6px 2px; position:relative;}
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--white);}
+  .nav-cta{
+    font-size:12px; padding:10px 20px; border:1px solid var(--white); border-radius:100px; letter-spacing:0.05em;
+    transition:background .25s ease, color .25s ease;
+  }
+  .nav-cta:hover, .nav-cta:focus-visible{background:var(--white); color:var(--black);}
+  .nav-right{display:flex; align-items:center; gap:18px;}
+  .nav-toggle-checkbox{display:none;}
+  .burger{display:none; flex-direction:column; justify-content:center; gap:5px; width:26px; height:26px; padding:0; cursor:pointer;}
+  .burger span{display:block; width:100%; height:2px; background:var(--white); transition:transform .25s ease, opacity .25s ease;}
+  .nav-mobile-panel{display:none; flex-direction:column; padding:8px 32px 20px; border-top:1px solid var(--line); background:rgba(8,8,10,0.98);}
+  .nav-mobile-panel a{color:var(--sub); font-size:14px; padding:14px 0; border-bottom:1px solid var(--line);}
+  .nav-mobile-panel a.nav-cta{border:1px solid var(--white); border-radius:100px; color:var(--white); text-align:center; margin-top:16px;}
+  .nav-mobile-panel a:hover, .nav-mobile-panel a:focus-visible{color:var(--white);}
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-right > .nav-cta{display:none;}
+    .burger{display:flex;}
+    .nav-toggle-checkbox:checked ~ .nav-mobile-panel{display:flex;}
+    .nav-toggle-checkbox:checked ~ .nav .burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-toggle-checkbox:checked ~ .nav .burger span:nth-child(2){opacity:0;}
+    .nav-toggle-checkbox:checked ~ .nav .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  }
+
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--sub);
+    letter-spacing:0.05em; margin-bottom:28px; transition:color .25s ease;
+  }
+  .back-link:hover, .back-link:focus-visible{color:var(--white);}
+
+  .info-hero{position:relative; padding:150px 0 120px; overflow:hidden; min-height:70vh;}
+  .info-glow{
+    position:absolute; top:-15%; right:-10%; width:600px; height:600px; border-radius:50%;
+    background:radial-gradient(circle, rgba(185,142,255,0.16), transparent 65%); filter:blur(40px); pointer-events:none;
+  }
+  .info-inner{position:relative; z-index:2;}
+  .info-title{
+    font-family:'Unbounded', sans-serif; font-weight:800;
+    font-size:clamp(30px, 4vw, 48px); line-height:1.1; margin-bottom:48px;
+  }
+
+  .info-card{
+    max-width:560px; padding:44px 40px;
+    background:var(--panel-2); border:1px solid var(--line); border-radius:24px;
+  }
+  .info-role{font-size:13px; letter-spacing:0.3em; color:var(--sub); margin-bottom:14px;}
+  .info-name-en{
+    font-family:'Unbounded', sans-serif; font-weight:900;
+    font-size:clamp(24px, 3vw, 32px); line-height:1; letter-spacing:0.06em; margin-bottom:20px;
+  }
+  .info-name-ja{font-size:22px; font-weight:500; letter-spacing:0.3em; margin-bottom:10px;}
+  .info-name-roman{font-size:12px; letter-spacing:0.35em; color:var(--sub);}
+  .info-mail{
+    display:inline-flex; align-items:center; gap:16px; margin-top:44px; padding-top:28px;
+    border-top:1px solid var(--line); width:100%;
+    font-size:clamp(14px, 3.6vw, 17px); letter-spacing:0.06em; overflow-wrap:anywhere;
+    transition:color .25s ease;
+  }
+  .info-mail svg{width:26px; height:26px; flex-shrink:0; stroke:var(--white); fill:none; stroke-width:1.5; stroke-linejoin:round;}
+  .info-mail:hover, .info-mail:focus-visible{color:var(--holo-b);}
+  .info-mail:hover svg, .info-mail:focus-visible svg{stroke:var(--holo-b);}
+
+  footer{border-top:1px solid var(--line); padding:40px 0;}
+  .foot-bottom{display:flex; justify-content:space-between; color:var(--sub-dim); font-size:12px; flex-wrap:wrap; gap:10px; max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--holo-b); outline-offset:3px; border-radius:4px;}
+
+  @media (max-width:860px){
+    .info-hero{padding:120px 0 80px;}
+    html{scroll-padding-top:88px;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px;}
+    .nav{padding:16px 20px;}
+    .info-card{padding:32px 24px;}
+    .info-name-ja{letter-spacing:0.2em;}
+    .info-name-roman{letter-spacing:0.25em;}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+  <div class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="NAL STUDIO" class="nav-logo-icon" width="852" height="570">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="index.html#classes">PRICE</a>
+      <a href="index.html#instructor">INSTRUCTOR</a>
+      <a href="index.html#access">ACCESS</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="nav-cta">WEBで予約する</a>
+      <label for="nav-toggle" class="burger" aria-label="メニューを開く"><span></span><span></span><span></span></label>
+    </div>
+  </div>
+  <nav class="nav-mobile-panel">
+    <a href="index.html">HOME</a>
+    <a href="index.html#classes">PRICE</a>
+    <a href="index.html#instructor">INSTRUCTOR</a>
+    <a href="index.html#access">ACCESS</a>
+    <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="nav-cta">WEBで予約する</a>
+  </nav>
+</header>
+
+<main>
+  <section class="info-hero">
+    <div class="info-glow"></div>
+    <div class="wrap info-inner">
+      <a href="index.html" class="back-link">← HOMEへ戻る</a>
+      <h1 class="info-title">INFO</h1>
+
+      <div class="info-card">
+        <div class="info-role">代表</div>
+        <div class="info-name-en">SEUN</div>
+        <div class="info-name-ja">島中 駿</div>
+        <div class="info-name-roman mono">SHIMANAKA SHUN</div>
+        <a class="info-mail mono" href="mailto:info@nalstudio-tokyo.com" aria-label="メールを送る: info@nalstudio-tokyo.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6.5l9 7 9-7"/></svg>
+          info@nalstudio-tokyo.com
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-bottom mono">
+    <span>© 2026 NAL STUDIO TOKYO</span>
+    <span>SHINJUKU, TOKYO, JAPAN</span>
+  </div>
+</footer>
+
+<script src="js/nav.js" defer></script>
+
+</body>
+</html>
