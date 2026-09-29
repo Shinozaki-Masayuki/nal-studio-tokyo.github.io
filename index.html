@@ -284,7 +284,7 @@
   }
   .marquee-track{
     display:inline-flex;
-    animation:scroll 34s linear infinite;
+    animation:scroll 50s linear infinite;
   }
   @keyframes scroll{
     from{transform:translateX(0);}
@@ -432,7 +432,7 @@
     background:linear-gradient(160deg, #1c1c22, #0c0c0e);
     border:1px solid var(--line);
     padding:36px;
-    aspect-ratio:4/5;
+    min-height:480px;
     display:flex; flex-direction:column; justify-content:space-between;
   }
   .profile-photo{
@@ -857,7 +857,7 @@
     .marquee-track span{font-size:18px;}
   }
   @media (max-width:700px){
-    .news-list li{padding:20px 16px; gap:8px; font-size:13px;}
+    .news-list li{padding:14px 16px; gap:8px; font-size:13px;}
     .news-list li::before{width:7px; height:7px;}
     .news .wrap{padding:0 14px;}
   }
@@ -880,7 +880,7 @@
   }
   /* スマホ・タブレットでは「動きを減らす」設定があっても、マーキーは常に動かす */
   @media (max-width:860px) and (prefers-reduced-motion: reduce){
-    .marquee-track{animation:scroll 34s linear infinite;}
+    .marquee-track{animation:scroll 50s linear infinite;}
   }
 </style>
 <script type="application/ld+json">
