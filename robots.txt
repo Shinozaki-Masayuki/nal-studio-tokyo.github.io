@@ -1,0 +1,24 @@
+# NAL STUDIO TOKYO - https://nalstudio-tokyo.com/
+# 検索エンジンおよびAI検索・AIアシスタントのクローラーによる、公開ページの巡回を許可します。
+
+User-agent: *
+Allow: /
+Disallow: /docs/
+Disallow: /scripts/
+
+# AI検索・AIアシスタント向け（回答に引用されやすくするため明示的に許可）
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /docs/
+Disallow: /scripts/
+
+Sitemap: https://nalstudio-tokyo.com/sitemap.xml

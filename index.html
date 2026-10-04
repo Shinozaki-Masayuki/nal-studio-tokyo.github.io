@@ -886,29 +886,129 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "DanceSchool",
-  "name": "NAL STUDIO TOKYO",
-  "description": "東京・新宿のK-POPダンススタジオ。BTS・SEVENTEENなど国内外トップアーティストのツアーダンサーSEUNが代表を務め、初心者からアイドル・ダンサー志望まで指導。",
-  "url": "https://nalstudio-tokyo.com/",
-  "image": "https://nalstudio-tokyo.com/images/ogp.png",
-  "logo": "https://nalstudio-tokyo.com/images/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "postalCode": "160-0004",
-    "addressRegion": "東京都",
-    "addressLocality": "新宿区",
-    "streetAddress": "四谷4丁目27−16 B1F",
-    "addressCountry": "JP"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "SEUN",
-    "jobTitle": "Dancer / Choreographer / Trainer"
-  },
-  "priceRange": "¥5,000〜¥36,000",
-  "sameAs": [
-    "https://www.instagram.com/nalstudio_tokyo",
-    "https://www.instagram.com/nalstudio_sendai/"
+  "@graph": [
+    {
+      "@type": "DanceSchool",
+      "@id": "https://nalstudio-tokyo.com/#school",
+      "name": "NAL STUDIO TOKYO",
+      "alternateName": "NAL STUDIO",
+      "description": "東京・新宿のK-POPダンススタジオ。東京メトロ丸ノ内線「新宿御苑前」駅 2番出口より徒歩5分。BTS・SEVENTEENなど国内外トップアーティストのツアーダンサーSEUNが代表を務め、初心者からアイドル・ダンサー志望まで指導。",
+      "url": "https://nalstudio-tokyo.com/",
+      "image": "https://nalstudio-tokyo.com/images/ogp.png",
+      "logo": "https://nalstudio-tokyo.com/images/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "160-0004",
+        "addressRegion": "東京都",
+        "addressLocality": "新宿区",
+        "streetAddress": "四谷4丁目27−16 B1F",
+        "addressCountry": "JP"
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E5%9B%9B%E8%B0%B74%E4%B8%81%E7%9B%AE27-16",
+      "founder": {
+        "@type": "Person",
+        "name": "SEUN",
+        "alternateName": ["島中 駿", "SHIMANAKA SHUN"],
+        "jobTitle": "Dancer / Choreographer / Trainer",
+        "url": "https://nalstudio-tokyo.com/instructor_seun.html"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "info@nalstudio-tokyo.com",
+        "availableLanguage": "Japanese",
+        "url": "https://nalstudio-tokyo.com/info.html"
+      },
+      "knowsAbout": ["K-POP", "HIPHOP", "R&B", "GIRLS HIPHOP"],
+      "priceRange": "¥5,000〜¥36,000",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "入会金",
+          "price": "10000",
+          "priceCurrency": "JPY"
+        }
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "name": "体験レッスン・レッスンのWEB予約",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://nalstudio.stores.jp/reserve/nalstudio/booking_pages",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        }
+      },
+      "sameAs": [
+        "https://www.instagram.com/nalstudio_tokyo",
+        "https://www.instagram.com/nalstudio_sendai/",
+        "https://www.youtube.com/@nalstudio_tokyo",
+        "https://line.me/R/ti/p/@nalstudio_tokyo"
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://nalstudio-tokyo.com/#course-nal-trainee",
+      "name": "NAL TRAINEE",
+      "description": "アイドル・ダンサーを目指す方向けの本気クラス。固定クラス制で、毎週同じクラスに参加します（予約不要）。1レッスン80分。基礎力・表現力・現場対応力・パフォーマンス力・チームワークなどを段階的に学ぶ、韓国式育成プログラムです。",
+      "inLanguage": "ja",
+      "provider": { "@id": "https://nalstudio-tokyo.com/#school" },
+      "offers": [
+        { "@type": "Offer", "name": "LIGHT（月4回）", "description": "月額・税込", "price": "15000", "priceCurrency": "JPY" },
+        { "@type": "Offer", "name": "STANDARD（月8回）", "description": "月額・税込", "price": "27500", "priceCurrency": "JPY" },
+        { "@type": "Offer", "name": "PREMIUM（月12回）", "description": "月額・税込", "price": "36000", "priceCurrency": "JPY" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://nalstudio-tokyo.com/#course-nal-kids-trainee",
+      "name": "NAL Kids TRAINEE",
+      "description": "アイドル・ダンサーを目指すキッズ向けの育成クラス。固定クラス制で、毎週同じクラスに参加します（予約不要）。1レッスン70分。",
+      "inLanguage": "ja",
+      "provider": { "@id": "https://nalstudio-tokyo.com/#school" },
+      "offers": [
+        { "@type": "Offer", "name": "月4回", "description": "月額・税込", "price": "12000", "priceCurrency": "JPY" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://nalstudio-tokyo.com/#course-open",
+      "name": "OPEN CLASS",
+      "description": "趣味で楽しく学びたい方、様々なジャンル（K-POP・HIPHOP・R&B・GIRLS HIPHOP）のダンスを学びたい方向けのクラス。WEB予約制で好きな日時のクラスを予約でき、未消化分は5ヶ月先まで繰越可能。1レッスン80分。",
+      "inLanguage": "ja",
+      "provider": { "@id": "https://nalstudio-tokyo.com/#school" },
+      "offers": [
+        { "@type": "Offer", "name": "STARTER（月2回）", "description": "月額・税込", "price": "6000", "priceCurrency": "JPY" },
+        { "@type": "Offer", "name": "LIGHT（月4回）", "description": "月額・税込", "price": "11500", "priceCurrency": "JPY" },
+        { "@type": "Offer", "name": "STANDARD（月8回）", "description": "月額・税込", "price": "21500", "priceCurrency": "JPY" },
+        { "@type": "Offer", "name": "PREMIUM（月12回）", "description": "月額・税込", "price": "30000", "priceCurrency": "JPY" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://nalstudio-tokyo.com/#course-kids-jr",
+      "name": "Kids / Jr. CLASS",
+      "description": "趣味・初心者向けのキッズ・ジュニアクラス。ダンス未経験のお子さまも、楽しみながらダンスを続けたいお子さまも対象。WEB予約制で、未消化分は5ヶ月先まで繰越可能。1レッスン50分。",
+      "inLanguage": "ja",
+      "provider": { "@id": "https://nalstudio-tokyo.com/#school" },
+      "offers": [
+        { "@type": "Offer", "name": "STARTER（月2回）", "description": "月額・税込", "price": "5000", "priceCurrency": "JPY" },
+        { "@type": "Offer", "name": "LIGHT（月4回）", "description": "月額・税込", "price": "9500", "priceCurrency": "JPY" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://nalstudio-tokyo.com/#course-unit",
+      "name": "UNIT CLASS",
+      "description": "1ヶ月で1曲を完成させ、担当・立ち位置・フォーメーションまで作り込むクラス。衣装着用での動画撮影やイベント出演を予定。固定クラス制で、毎週同じクラスに参加します（予約不要）。1レッスン70分。",
+      "inLanguage": "ja",
+      "provider": { "@id": "https://nalstudio-tokyo.com/#school" },
+      "offers": [
+        { "@type": "Offer", "name": "月4回", "description": "月額・税込", "price": "12000", "priceCurrency": "JPY" }
+      ]
+    }
   ]
 }
 </script>
@@ -1054,7 +1154,7 @@
         <div class="studio-intro-copy">
           <h2 class="sec-title" style="font-size:clamp(26px,3.6vw,40px); margin-bottom:20px;">K-POPを<br>もっと楽しく、<br>もっと本格的に。</h2>
           <p class="studio-intro-text">
-            NAL STUDIOは、K-POPアイドルやダンサーを目指す方から、趣味で楽しく踊りたい方までを対象としたダンススタジオです。
+            NAL STUDIOは、K-POPアイドルやダンサーを目指す方から、趣味で楽しく踊りたい方までを対象としたダンススタジオです。東京・新宿区四谷、東京メトロ丸ノ内線「新宿御苑前」駅 2番出口より徒歩5分。未経験・初心者の方も参加でき、体験レッスンはWEB予約サイトから受け付けています。
           </p>
         </div>
 
