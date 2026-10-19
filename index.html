@@ -308,6 +308,13 @@
     font-family:'Unbounded', sans-serif; font-weight:800;
     font-size:clamp(30px, 4vw, 48px); line-height:1.1;
   }
+  /* 見出しに併記する検索キーワード（見出しの大きさは変えず、補足として小さく表示） */
+  .sec-title-sub{
+    font-family:'Noto Sans JP', sans-serif; font-weight:500;
+    font-size:clamp(13px, 1.5vw, 16px); letter-spacing:0.06em; color:var(--sub);
+    white-space:nowrap;
+  }
+  .sec-title-sub .sep{margin:0 0.15em;}
   .sec-desc{max-width:360px; color:var(--sub); font-size:14px; line-height:1.85;}
 
   /* ---------- instagram feed (hero) ---------- */
@@ -854,6 +861,8 @@
     .hero{padding-top:104px;}
     .sec-head{flex-direction:column; align-items:flex-start; gap:14px;}
     .sec-desc{max-width:100%;}
+    .sec-title-sub{display:block; margin-top:8px; font-size:13px;}
+    .sec-title-sub .sep{display:none;}
     .marquee-track span{font-size:18px;}
   }
   @media (max-width:700px){
@@ -1154,7 +1163,7 @@
         <div class="studio-intro-copy">
           <h2 class="sec-title" style="font-size:clamp(26px,3.6vw,40px); margin-bottom:20px;">K-POPを<br>もっと楽しく、<br>もっと本格的に。</h2>
           <p class="studio-intro-text">
-            NAL STUDIOは、K-POPアイドルやダンサーを目指す方から、趣味で楽しく踊りたい方までを対象としたダンススタジオです。東京・新宿区四谷、東京メトロ丸ノ内線「新宿御苑前」駅 2番出口より徒歩5分。未経験・初心者の方も参加でき、体験レッスンはWEB予約サイトから受け付けています。
+            NAL STUDIOは、K-POPアイドルやダンサーを目指す方から、趣味で楽しく踊りたい方までを対象としたダンススタジオです。K-POP、HIPHOP、R&amp;B、GIRLS HIPHOPなど、ジャンル豊富なクラスを開講しています。東京・新宿区四谷、東京メトロ丸ノ内線「新宿御苑前」駅 2番出口より徒歩5分。未経験・初心者の方も参加でき、体験レッスンはWEB予約サイトから受け付けています。
           </p>
         </div>
 
@@ -1280,7 +1289,7 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <h2 class="sec-title">料金システム</h2>
+          <h2 class="sec-title">料金システム<span class="sec-title-sub"><span class="sep">｜</span>新宿のK-POPダンス教室</span></h2>
         </div>
         <div class="sec-desc">目的別に選べる5つのクラス。アイドル・ダンサーを本気で目指す人から、趣味で楽しく学びたい人まで。すべて税込価格。</div>
       </div>
@@ -1561,7 +1570,7 @@
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <h2 class="sec-title">INSTRUCTOR</h2>
+          <h2 class="sec-title">INSTRUCTOR<span class="sec-title-sub"><span class="sep">｜</span>K-POP振付師・ダンサー</span></h2>
         </div>
         <div class="sec-desc">各クラスを担当するINSTRUCTOR陣。INSTRUCTORの画像をタップすると、活動実績の詳細をご覧いただけます。</div>
       </div>
