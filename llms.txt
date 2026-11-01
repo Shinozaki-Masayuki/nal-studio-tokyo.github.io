@@ -18,7 +18,8 @@
 
 - [トップページ](https://nalstudio-tokyo.com/): スタジオ紹介、料金システム、育成プログラム、講師一覧、指導実績、アクセス、レンタルスタジオ、NAL STUDIO SENDAI
 - [INFO](https://nalstudio-tokyo.com/info.html): 代表（SEUN／島中 駿）と広報（篠崎 真之）の連絡先
-- [NEWS](https://nalstudio-tokyo.com/#news): お知らせ（メディア取材、オーディション開催など）
+- [NEWS](https://nalstudio-tokyo.com/#news): 最新のお知らせ3件（メディア出演・取材、オーディション開催など）
+- [NEWS一覧](https://nalstudio-tokyo.com/news.html): 過去分を含むお知らせの一覧
 - [料金システム](https://nalstudio-tokyo.com/#classes): クラスごとの料金
 - [講師一覧](https://nalstudio-tokyo.com/#instructor): インストラクター16名のプロフィール
 - [アクセス](https://nalstudio-tokyo.com/#access): 地図・最寄り駅
