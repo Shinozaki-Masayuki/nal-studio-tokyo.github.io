@@ -656,6 +656,25 @@
   .enroll-title{font-family:'Unbounded', sans-serif; font-weight:700; font-size:14.5px; margin-bottom:10px;}
   .enroll-desc{font-size:12.5px; color:var(--sub); line-height:1.8;}
 
+  /* スキルチェック詳細（随時開催） */
+  .sc-lead{margin-bottom:26px;}
+  .sc-card .stage-list{margin-top:12px;}
+  .sc-after{margin-top:22px;}
+  .sc-info{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin:22px 0 24px;
+    background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  }
+  .sc-info > div{background:var(--panel); padding:16px 20px; min-width:0;}
+  .sc-info dt{font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.08em; color:var(--holo-b); margin-bottom:6px;}
+  .sc-info dd{font-size:14px; font-weight:500; line-height:1.6;}
+  .sc-apply{display:flex; align-items:center; flex-wrap:wrap; gap:14px 20px;}
+  .sc-apply-text{font-size:12.5px; color:var(--sub);}
+  .sc-apply-btn{
+    font-size:12.5px; padding:11px 22px; border:1px solid var(--white); border-radius:100px; letter-spacing:0.05em;
+    transition:background .25s ease, color .25s ease;
+  }
+  .sc-apply-btn:hover, .sc-apply-btn:focus-visible{background:var(--white); color:var(--black);}
+
   .program-note{
     margin-bottom:32px; padding:22px 26px;
     border:1px solid var(--line); border-left:2px solid var(--holo-b);
@@ -860,6 +879,7 @@
     .artist-list{grid-template-columns:repeat(2,1fr);}
     .sendai-grid{grid-template-columns:1fr;}
     .enroll-grid{grid-template-columns:1fr;}
+    .sc-info{grid-template-columns:1fr;}
     .stage-flow, .stage-flow.three{grid-template-columns:1fr;}
     .stage-arrow{transform:rotate(90deg); padding:4px 0;}
     .skillcheck-panel{grid-template-columns:1fr; gap:24px;}
@@ -1506,6 +1526,50 @@
               <div class="enroll-title">スキルチェックを受けずに入会する</div>
               <div class="enroll-desc">スキルチェックを受けない場合は、C CLASSからスタート可能です。未経験者や初心者の方も安心してご参加いただけます。</div>
             </div>
+          </div>
+        </div>
+
+        <div class="enroll-block" id="skillcheck">
+          <div class="enroll-label mono"><span class="chip"></span>NAL TRAINEE SKILL CHECK</div>
+          <div class="enroll-intro">スキルチェックは随時開催です。いつでも挑戦できます。</div>
+          <div class="enroll-desc sc-lead">ダンス経験がある方は、スキルチェックを受けることで、現在のスキルに応じてB・Aクラスからスタートできる可能性があります。未経験・経験が浅い方は、スキルチェックを受けずにCクラスからスタートすることも可能です。また、現在NAL TRAINEEを受講している生徒も、「もっと上のクラスに挑戦したい」「現在の自分のレベルを確認したい」という場合に受験できます。</div>
+
+          <div class="enroll-grid">
+            <div class="enroll-card sc-card">
+              <div class="enroll-num mono">01</div>
+              <div class="enroll-title">BASIC</div>
+              <div class="enroll-desc">事前にお送りする基礎動画を練習し、披露していただきます。</div>
+              <ul class="stage-list">
+                <li>動画通りにできているか</li>
+                <li>正しいフォームになっているか</li>
+                <li>基礎動作を正しく理解できているか</li>
+                <li>身体に余計な癖がついていないか</li>
+              </ul>
+            </div>
+            <div class="enroll-card sc-card">
+              <div class="enroll-num mono">02</div>
+              <div class="enroll-title">DANCE</div>
+              <div class="enroll-desc">自分の得意な振付を、1曲・約1分程度披露していただきます。</div>
+              <ul class="stage-list">
+                <li>音楽に合わせて踊れているか</li>
+                <li>表現力、ダンスの魅力</li>
+                <li>自分らしさを活かして踊れているか</li>
+                <li>全体の構成、見せ方</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="enroll-desc sc-after">BASICとDANCEの内容をもとに総合的に確認し、現在のレベルに合ったクラスをご案内いたします。</div>
+
+          <dl class="sc-info">
+            <div><dt>開催</dt><dd>随時</dd></div>
+            <div><dt>参加費</dt><dd>¥1,500</dd></div>
+            <div><dt>再受験</dt><dd>前回の受験から1ヶ月程度</dd></div>
+          </dl>
+
+          <div class="sc-apply">
+            <span class="sc-apply-text">お申し込みは、NAL STUDIO公式LINEよりお願いいたします。</span>
+            <a class="sc-apply-btn" href="https://line.me/R/ti/p/@nalstudio_tokyo" target="_blank" rel="noopener">公式LINEから申し込む →</a>
           </div>
         </div>
 
