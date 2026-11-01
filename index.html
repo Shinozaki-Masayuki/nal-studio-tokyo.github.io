@@ -344,6 +344,17 @@
     transition:color .25s ease, text-decoration-color .25s ease;
   }
   .news-list a:hover, .news-list a:focus-visible{color:var(--holo-b); text-decoration-color:var(--holo-b);}
+  .news-list li > time{
+    font-family:'JetBrains Mono', monospace; font-weight:500; font-size:12.5px; letter-spacing:0.04em;
+    color:var(--sub); flex-shrink:0; white-space:nowrap;
+  }
+  .news-more{display:flex; justify-content:flex-end; margin-top:20px;}
+  .news-more a{
+    font-size:13px; letter-spacing:0.08em; color:var(--sub);
+    border:1px solid var(--line); border-radius:100px; padding:10px 22px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .news-more a:hover, .news-more a:focus-visible{color:var(--white); border-color:var(--sub);}
   .ig-card{
     position:relative; display:block; aspect-ratio:1/1; overflow:hidden; border-radius:12px;
     background:var(--panel-2); border:1px solid var(--line);
@@ -866,8 +877,10 @@
     .marquee-track span{font-size:18px;}
   }
   @media (max-width:700px){
-    .news-list li{padding:14px 16px; gap:8px; font-size:13px;}
+    .news-list li{padding:14px 16px; gap:8px; font-size:13px; flex-wrap:wrap; row-gap:4px;}
     .news-list li::before{width:7px; height:7px;}
+    .news-list li > time{font-size:11.5px;}
+    .news-list li > span{flex-basis:100%;}
     .news .wrap{padding:0 14px;}
   }
   @media (max-width:520px){
@@ -1146,12 +1159,13 @@
         </div>
       </div>
 
+      <!-- 最新3件のみ掲載。それ以前は news.html（一覧）へ。 -->
       <ul class="news-list">
-        <li><span><a href="https://www.instagram.com/p/Dd3qvkdgSbt/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener">WAKEONEオンラインオーディション開催決定</a></span></li>
-        <li><span><a href="https://www.instagram.com/p/Ddn8FC0Afpm/?stkn=MTJvYzVqNWVoeGZ3Nw==" target="_blank" rel="noopener">P NATION対面オーディション開催決定</a></span></li>
-        <li><span><a href="https://www.instagram.com/p/Ddn9udtoBe6/?stkn=MXkwaW1ldHh2bmthNA==" target="_blank" rel="noopener">MODHAUS対面オーディション開催決定</a></span></li>
-        <li><span>「<a href="https://www.tfm.co.jp/lock/niziu/98832?utm_source=chatgpt.com" target="_blank" rel="noopener">TOKYO FM SCHOOL OF LOCK!</a>」に取材されました。</span></li>
+        <li><time class="mono" datetime="2026-11-04">2026.11.04</time><span><a href="https://www.instagram.com/p/DfEP3IagRg4/" target="_blank" rel="noopener">J-WAVEに代表SEUNが出演します</a></span></li>
+        <li><time class="mono" datetime="2026-10-31">2026.10.31</time><span><a href="https://www.instagram.com/p/Ddn8FC0Afpm/?stkn=MTJvYzVqNWVoeGZ3Nw==" target="_blank" rel="noopener">P NATION対面オーディションを開催しました</a></span></li>
+        <li><time class="mono" datetime="2026-10-31">2026.10.31</time><span><a href="https://www.instagram.com/p/Ddn9udtoBe6/?stkn=MXkwaW1ldHh2bmthNA==" target="_blank" rel="noopener">MODHAUS対面オーディションを開催しました</a></span></li>
       </ul>
+      <div class="news-more"><a href="news.html">過去のNEWS一覧 →</a></div>
     </div>
   </section>
 
