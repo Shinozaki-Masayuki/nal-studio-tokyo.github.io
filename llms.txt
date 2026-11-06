@@ -21,7 +21,7 @@
 - [NEWS](https://nalstudio-tokyo.com/#news): 最新のお知らせ3件（メディア出演・取材、オーディション開催など）
 - [NEWS一覧](https://nalstudio-tokyo.com/news.html): 過去分を含むお知らせの一覧
 - [料金システム](https://nalstudio-tokyo.com/#classes): クラスごとの料金
-- [講師一覧](https://nalstudio-tokyo.com/#instructor): インストラクター16名のプロフィール
+- [講師一覧](https://nalstudio-tokyo.com/#instructor): インストラクター17名のプロフィール
 - [アクセス](https://nalstudio-tokyo.com/#access): 地図・最寄り駅
 
 ## クラスと料金（すべて税込・月額）
@@ -59,6 +59,7 @@
 - [はっぴーがーる](https://nalstudio-tokyo.com/instructor_happygirl.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @happygirlrina
 - [LIN](https://nalstudio-tokyo.com/instructor_lin.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @lqxinx
 - [Yamakazu](https://nalstudio-tokyo.com/instructor_yamakazu.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @yamakazu.123
+- [SE1TAROW](https://nalstudio-tokyo.com/instructor_se1tarow.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @se1tarow_15
 
 ## レンタルスタジオ
 
