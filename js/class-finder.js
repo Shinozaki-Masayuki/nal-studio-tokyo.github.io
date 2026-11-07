@@ -20,7 +20,8 @@
     .join('|') + ')');
 
   var dialog = document.getElementById('cf-dialog');
-  if (!dialog) return;
+  var panel = document.getElementById('cf-panel');
+  if (!dialog || !panel) return;
 
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var bodyEl = document.getElementById('cf-body');
@@ -232,31 +233,36 @@
       .catch(showError);
   }
 
-  // 閉じたあとの後始末（ESCキーなどで閉じた場合は close イベントからも呼ばれる）
-  function cleanup() {
-    document.documentElement.classList.remove("cf-lock");
-  }
+  // ポップアップの開閉。<dialog> に頼らない通常の重ね表示なので、古いスマホ・アプリ内ブラウザでも動く
+  function isOpen() { return !dialog.hidden; }
 
   function closeDialog() {
-    if (dialog.open) dialog.close();
-    cleanup();
+    if (!isOpen()) return;
+    dialog.hidden = true;
+    document.documentElement.classList.remove('cf-lock');
+    if (lastTrigger && lastTrigger.focus) {
+      try { lastTrigger.focus({ preventScroll: true }); } catch (e) { lastTrigger.focus(); }
+    }
   }
+
+  // スマホのブラウザ（特にiPhone）は、アドレスバーの出入りで画面の高さが変わるため、実際の高さを測って渡す
+  function setViewportHeight() {
+    document.documentElement.style.setProperty('--cf-h', window.innerHeight + 'px');
+  }
+  window.addEventListener('resize', setViewportHeight);
 
   function openDialog(trigger) {
     lastTrigger = trigger || null;
-    if (typeof dialog.showModal === 'function') {
-      dialog.showModal();
-    } else {
-      dialog.setAttribute('open', '');
-    }
-    // 開いた直後は、×ボタンに枠が出ないよう、パネル自体にフォーカスを置く
-    dialog.focus({ preventScroll: true });
+    setViewportHeight();
+    dialog.hidden = false;
     document.documentElement.classList.add('cf-lock');
+    // 開いた直後は、×ボタンに枠が出ないよう、パネル自体にフォーカスを置く
+    try { panel.focus({ preventScroll: true }); } catch (e) { panel.focus(); }
     track('class_finder_open', { source: (trigger && trigger.getAttribute('data-cf-open')) || '' });
     if (!data) load();
   }
 
-  document.querySelectorAll('[data-cf-open]').forEach(function (btn) {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cf-open]'), function (btn) {
     btn.addEventListener('click', function () { openDialog(btn); });
   });
 
@@ -267,9 +273,21 @@
     if (e.target === dialog) closeDialog();
   });
 
-  dialog.addEventListener('close', function () {
-    document.documentElement.classList.remove('cf-lock');
-    if (lastTrigger && lastTrigger.focus) lastTrigger.focus({ preventScroll: true });
+  // Escキーで閉じる／Tabキーの移動をポップアップの中に留める
+  document.addEventListener('keydown', function (e) {
+    if (!isOpen()) return;
+    if (e.key === 'Escape' || e.key === 'Esc') { closeDialog(); return; }
+    if (e.key !== 'Tab') return;
+    var items = panel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    var visible = Array.prototype.filter.call(items, function (n) { return n.offsetParent !== null; });
+    if (!visible.length) return;
+    var first = visible[0];
+    var last = visible[visible.length - 1];
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === panel)) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
   });
 
   backBtn.addEventListener('click', function () {
