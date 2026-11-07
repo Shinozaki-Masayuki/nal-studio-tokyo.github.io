@@ -1,0 +1,187 @@
+{
+  "start": "q1",
+  "lineId": "@nalstudio_tokyo",
+  "questions": {
+    "q1": {
+      "text": "どんな目的で踊りたいですか？",
+      "options": [
+        { "label": "アイドルになりたい", "sub": "デビューを本気で目指す", "next": "q_idol" },
+        { "label": "ダンサーになりたい", "sub": "プロとして踊りたい", "next": "q_dancer" },
+        { "label": "趣味で楽しみたい", "sub": "運動・好きな曲を踊る", "next": "q_hobby" },
+        { "label": "子どもに習わせたい", "sub": "キッズ・ジュニア", "next": "q_kids" }
+      ]
+    },
+    "q_idol": {
+      "text": "ダンスの経験を教えてください👇",
+      "options": [
+        { "label": "未経験・初心者", "sub": "ダンスはこれから", "result": "idol_beginner" },
+        { "label": "経験あり", "sub": "ダンスを習った・踊っていた", "result": "idol_exp" }
+      ]
+    },
+    "q_dancer": {
+      "text": "ダンスの経験を教えてください👇",
+      "options": [
+        { "label": "未経験・初心者", "sub": "ダンスはこれから", "result": "dancer_beginner" },
+        { "label": "経験あり", "sub": "ジャンルを問わず踊っていた", "result": "dancer_exp" }
+      ]
+    },
+    "q_hobby": {
+      "text": "ダンスの経験を教えてください👇",
+      "options": [
+        { "label": "未経験・初心者", "sub": "ダンスはこれから", "result": "hobby_beginner" },
+        { "label": "経験あり", "sub": "ダンスを習った・踊っていた", "result": "hobby_exp" }
+      ]
+    },
+    "q_kids": {
+      "text": "お子さまの目的を教えてください👇",
+      "options": [
+        { "label": "楽しく習わせたい", "sub": "リズム感や体の使い方から", "result": "kids_fun" },
+        { "label": "アイドル・ダンサーを目指したい", "sub": "育成クラスについて知りたい", "result": "kids_aim" }
+      ]
+    }
+  },
+  "links": {
+    "ticket": "https://nalstudio.stores.jp/reserve/nalstudio/products/317252",
+    "booking": "https://nalstudio.stores.jp/reserve/nalstudio/booking_pages"
+  },
+  "results": {
+    "idol_beginner": {
+      "title": "NAL TRAINEE Cクラス",
+      "lead": "K-POP特有の体の使い方、リズム、魅せ方を基礎から学ぶ、未経験者向けの育成クラスです！短い振付を丁寧に覚えます✨",
+      "sections": [
+        { "heading": "時間割", "note": "80分・毎週同じクラスに参加", "lines": ["火 19:10 SEUN", "水 19:10 yuko"] },
+        { "heading": "月謝", "lines": ["月4回 ¥15,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] },
+        { "heading": "体験", "lines": ["¥1,500（4週目は体験できません）"] }
+      ],
+      "footnote": "3か月に1回、韓国芸能事務所への資料送付や対面オーディションの機会があります！",
+      "ctas": [
+        { "type": "line", "label": "LINEで「TRAINEE体験希望」を送る", "message": "TRAINEE体験希望" }
+      ],
+      "ctaNote": "申込方法はLINEでご案内します。"
+    },
+    "idol_exp": {
+      "title": "NAL TRAINEE",
+      "lead": "スキルチェックの結果で、スタートするクラス（C / B / A）が決まります！",
+      "sections": [
+        { "heading": "Cクラス", "note": "基礎を身につける", "lines": ["火 19:10 SEUN", "水 19:10 yuko"] },
+        { "heading": "Bクラス", "note": "表現力とグループで揃える力を磨く", "lines": ["月 19:10 SEUN", "火 17:40 HAYATARO", "金 19:10 Nönöka", "土 14:40 REMI"] },
+        { "heading": "Aクラス", "note": "毎月の動画撮影、作品制作", "lines": ["月 20:40 REMI", "木 20:40 SEUN"] },
+        { "heading": "月謝", "lines": ["月4回 ¥15,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] }
+      ],
+      "footnote": "全クラス、3か月に1回、韓国芸能事務所への資料送付や対面オーディションの機会があります！",
+      "ctas": [
+        { "type": "line", "label": "LINEで「スキルチェック申込」を送る", "message": "スキルチェック申込" },
+        { "type": "page", "label": "スキルチェックの詳細を見る", "url": "#skillcheck" }
+      ],
+      "ctaNote": "受付方法はLINEでご案内します。"
+    },
+    "dancer_beginner": {
+      "title": "OPEN CLASS または NAL TRAINEE C の体験",
+      "lead": "好きなジャンルを見つけたい方はOPEN CLASS、基礎から本気で学びたい方はTRAINEE Cがおすすめです！",
+      "sections": [
+        { "heading": "OPEN CLASS", "lines": ["K-POP超初心者 火 20:40 HAYATARO", "K-POP 水 17:40 Remon", "R&B 金 17:40 Yamakazu", "K-POP 日 16:30 Nönöka"] },
+        { "heading": "OPEN CLASSの体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
+      ],
+      "ctas": [
+        { "type": "link", "label": "体験チケットを購入", "linkKey": "ticket" },
+        { "type": "link", "label": "クラスを予約", "linkKey": "booking" }
+      ],
+      "extra": {
+        "title": "NAL TRAINEE C の体験",
+        "sections": [
+          { "heading": "時間割", "lines": ["火 19:10 SEUN", "水 19:10 yuko"] },
+          { "heading": "体験", "lines": ["¥1,500（※4週目は体験できません）"] }
+        ],
+        "ctas": [
+          { "type": "line", "label": "LINEで「TRAINEE体験希望」を送る", "message": "TRAINEE体験希望" }
+        ]
+      }
+    },
+    "dancer_exp": {
+      "title": "TRAINEE for Dancers",
+      "lead": "トレーニーAレベルの方が対象のクラスです！",
+      "sections": [
+        { "heading": "時間割", "lines": ["木 19:10 syoui（80分）"] },
+        { "heading": "参加条件", "lines": ["スキルチェック、またはsyouiの許可"] },
+        { "heading": "月謝", "lines": ["月4回 ¥15,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] }
+      ],
+      "footnote": "NAL TRAINEE for Dancersのクラスでは、案件がある際にダミーダンサーやバックダンサーの機会があります！",
+      "ctas": [
+        { "type": "line", "label": "LINEで「スキルチェック申込」を送る", "message": "スキルチェック申込" },
+        { "type": "page", "label": "スキルチェックの詳細を見る", "url": "#skillcheck" }
+      ],
+      "ctaNote": "受付方法はLINEでご案内します。"
+    },
+    "hobby_beginner": {
+      "title": "K-POP超初心者クラス",
+      "lead": "",
+      "sections": [
+        { "heading": "時間割", "lines": ["火 20:40〜22:00 HAYATARO"] },
+        { "heading": "ほかのおすすめ", "lines": ["K-POP 水 17:40 Remon", "R&B 金 17:40 Yamakazu", "K-POP 日 16:30 Nönöka"] },
+        { "heading": "土日に通いたい方", "note": "未経験でも受講できます", "lines": ["土 13:10 YUKi", "土 16:10 HAYATARO", "日 16:30 Nönöka"] },
+        { "heading": "お母さん向け", "lines": ["ママ's K-POP 日 11:10 konomi", "Kids / Jr.の月謝（月2回 ¥5,000〜）で受講できます"] },
+        { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料", "未消化分は5か月先まで繰り越せます✨"] },
+        { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
+      ],
+      "ctas": [
+        { "type": "link", "label": "体験チケットを購入", "linkKey": "ticket" },
+        { "type": "link", "label": "クラスを予約", "linkKey": "booking" }
+      ]
+    },
+    "hobby_exp": {
+      "title": "OPEN CLASS",
+      "lead": "",
+      "sections": [
+        { "heading": "K-POP", "lines": ["水 20:40 REMI", "土 13:10 YUKi", "土 16:10 HAYATARO"] },
+        { "heading": "R&B / HIPHOP", "lines": ["金 20:40 TOGASHI"] },
+        { "heading": "HIPHOP / R&B", "lines": ["日 19:30 TAICHI"] },
+        { "heading": "Girls HIPHOP", "lines": ["土 17:40 REMI", "土 19:10 Rina"] },
+        { "heading": "HIPHOP", "lines": ["土 20:40 KUMA", "日 21:00 SE1TAROW"] },
+        { "heading": "JAZZ FUNK", "lines": ["日 18:00 はっぴーがーる"] },
+        { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] },
+        { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
+      ],
+      "ctas": [
+        { "type": "link", "label": "体験チケットを購入", "linkKey": "ticket" },
+        { "type": "link", "label": "クラスを予約", "linkKey": "booking" }
+      ]
+    },
+    "kids_fun": {
+      "title": "Kids / Jr. CLASS（50分）",
+      "lead": "リズム感や体の使い方を、楽しみながら学びます✨",
+      "sections": [
+        { "heading": "対象の目安", "lines": ["Kids：小学3年生くらいまで", "Jr.：小学3〜6年生", "例外もご相談いただけます！"] },
+        { "heading": "日曜の時間割", "lines": ["12:10 Kids K-POP konomi", "13:10 Jr. K-POP Remon", "15:30 Kids CHEER konomi"] },
+        { "heading": "月謝", "lines": ["月2回 ¥5,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] },
+        { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
+      ],
+      "ctas": [
+        { "type": "link", "label": "体験チケットを購入", "linkKey": "ticket" },
+        { "type": "link", "label": "クラスを予約", "linkKey": "booking" }
+      ],
+      "extra": {
+        "title": "作品づくりが好きなお子さまには UNIT CLASS もおすすめ",
+        "sections": [
+          { "heading": "UNIT CLASS", "lines": ["木 17:40 yuko", "月4回 ¥12,000"] }
+        ],
+        "ctas": [
+          { "type": "line", "label": "LINEで「UNIT体験希望」を送る", "message": "UNIT体験希望" }
+        ]
+      }
+    },
+    "kids_aim": {
+      "title": "NAL Kids TRAINEE（70分）",
+      "lead": "アイドルやダンサーを目指すお子さまの育成クラスです！集中力、継続力、協調性、表現力を育てます✨",
+      "sections": [
+        { "heading": "時間割", "lines": ["Bクラス 日 14:10 REMI", "Aクラス 月 17:40 yuko"] },
+        { "heading": "月謝", "lines": ["月4回 ¥12,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] },
+        { "heading": "体験", "lines": ["¥1,500（Aクラスは対象外）"] }
+      ],
+      "footnote": "3か月に1回、韓国芸能事務所への資料送付や対面オーディションの機会があります！",
+      "ctas": [
+        { "type": "line", "label": "LINEで「TRAINEE体験希望」を送る", "message": "TRAINEE体験希望" }
+      ],
+      "ctaNote": "参加条件もスタッフがご案内します。"
+    }
+  }
+}
