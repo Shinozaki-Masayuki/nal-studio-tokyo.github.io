@@ -506,20 +506,122 @@
 
   /* ---------- diagnose panel ---------- */
   .diagnose-panel{margin-bottom:56px;}
-  .diagnose-label{font-size:13px; color:var(--sub); letter-spacing:0.05em; margin-bottom:20px;}
-  .diagnose-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
-    background:var(--line); border:1px solid var(--line); border-radius:20px; overflow:hidden;
+  /* 「あなたはどのクラス？」の位置に置く、大きなチャット診断の入口 */
+  .diagnose-hero{
+    display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:10px 28px;
+    width:100%; margin-bottom:24px; padding:36px 40px; text-align:left; cursor:pointer;
+    font-family:inherit; color:var(--white);
+    border:1px solid transparent; border-radius:24px;
+    background:linear-gradient(var(--panel-2), var(--panel-2)) padding-box, var(--holo-grad) border-box;
+    transition:transform .25s ease, box-shadow .25s ease;
   }
-  .diagnose-row{
-    background:var(--panel-2); padding:26px 24px; display:flex; flex-direction:column; gap:16px;
-    min-width:0;
+  .diagnose-hero:hover, .diagnose-hero:focus-visible{transform:translateY(-3px); box-shadow:0 18px 44px -16px rgba(185,142,255,0.5);}
+  .diagnose-hero-eyebrow{grid-column:1; font-weight:700; font-size:clamp(18px, 2.4vw, 24px); line-height:1.4; color:var(--white); letter-spacing:0.04em;}
+  .diagnose-hero-title{grid-column:1; font-family:'Unbounded', sans-serif; font-weight:800; font-size:clamp(22px, 3.4vw, 36px); line-height:1.3;}
+  .diagnose-hero-sub{grid-column:1; font-size:13.5px; color:var(--sub); line-height:1.8;}
+  .diagnose-hero-go{
+    grid-column:2; grid-row:1 / span 3; align-self:center; white-space:nowrap;
+    background:var(--white); color:var(--black); font-weight:700; font-size:14px; letter-spacing:0.04em;
+    padding:16px 30px; border-radius:100px;
   }
-  .diagnose-q{font-family:'Unbounded', sans-serif; font-weight:700; font-size:14.5px; line-height:1.5;}
-  .diagnose-a{display:flex; flex-direction:column; gap:8px; font-family:'Unbounded', sans-serif; font-weight:700; font-size:12.5px; color:var(--white);}
-  .diagnose-a span{display:flex; align-items:center; gap:9px;}
-  .diagnose-a span::before{content:''; width:9px; height:9px; border-radius:2px; background:var(--holo-grad); flex-shrink:0;}
 
+  /* ---------- クラス診断（チャット） ---------- */
+  .cf-fab{
+    font-family:inherit; font-size:13px; font-weight:700; letter-spacing:0.04em; cursor:pointer;
+    color:var(--black); background:var(--white); border:0; border-radius:100px;
+    position:fixed; z-index:450;
+    right:max(16px, env(safe-area-inset-right, 0px)); bottom:max(16px, env(safe-area-inset-bottom, 0px));
+    display:inline-flex; align-items:center; gap:9px; padding:13px 20px;
+    box-shadow:0 10px 30px -6px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.12);
+    opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s ease, box-shadow .2s ease;
+  }
+  .cf-fab::before{content:''; width:8px; height:8px; border-radius:2px; background:var(--holo-grad); flex-shrink:0;}
+  .cf-fab.is-visible{opacity:1; visibility:visible; transform:none;}
+  .cf-fab:hover, .cf-fab:focus-visible{box-shadow:0 12px 30px -6px rgba(185,142,255,0.55), 0 0 0 1px rgba(255,255,255,0.2);}
+  html.cf-lock{overflow:hidden;}
+
+  /* ポップアップ：<dialog> に頼らず、どのスマホ・ブラウザでも開く通常の重ね表示 */
+  .cf-dialog{
+    position:fixed; top:0; right:0; bottom:0; left:0; z-index:900;
+    display:flex; align-items:center; justify-content:center; padding:24px;
+    background:rgba(4,4,6,0.78); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+    color:var(--white);
+  }
+  .cf-dialog[hidden]{display:none;}
+  .cf-panel{
+    display:flex; flex-direction:column; width:100%; max-width:720px;
+    max-height:88vh; max-height:calc(var(--cf-h, 100vh) * 0.88);
+    background:var(--panel-2); border:1px solid var(--line); border-radius:24px; overflow:hidden; outline:none;
+  }
+  .cf-dialog-head{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 14px 14px 22px; border-bottom:1px solid var(--line); flex-shrink:0;}
+  .cf-dialog-title{font-family:'Unbounded', sans-serif; font-weight:800; font-size:14px; letter-spacing:0.04em;}
+  .cf-close{
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer;
+    font-family:inherit; font-size:20px; line-height:1; color:var(--sub); background:transparent;
+    border:1px solid var(--line); border-radius:50%; transition:color .2s ease, border-color .2s ease;
+  }
+  .cf-close:hover, .cf-close:focus-visible{color:var(--white); border-color:var(--sub);}
+  /* flex:1 1 auto（0%ではなくauto）にして、iPhoneのSafariで本文が潰れないようにする */
+  .cf-body{flex:1 1 auto; min-height:0; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; padding:22px; scrollbar-width:thin; scrollbar-color:#3a3a42 transparent;}
+  .cf-body{max-height:calc(88vh - 66px); max-height:calc(var(--cf-h, 100vh) * 0.88 - 66px);}
+  .cf-dialog-head{flex:0 0 auto;}
+  .cf-log{display:flex; flex-direction:column;}
+  .cf-log > .cf-row + .cf-row{margin-top:18px;}
+  .cf-row{display:flex;}
+  .cf-user{justify-content:flex-end;}
+  .cf-bubble{max-width:100%; min-width:0;}
+  .cf-bot .cf-bubble{width:100%; background:var(--panel); border:1px solid var(--line); border-radius:4px 20px 20px 20px; padding:20px 20px 22px;}
+  .cf-user .cf-bubble{
+    max-width:86%; background:linear-gradient(100deg, rgba(110,231,245,0.18), rgba(185,142,255,0.22));
+    border:1px solid rgba(185,142,255,0.35); border-radius:20px 4px 20px 20px; padding:12px 18px; font-size:13.5px; line-height:1.6;
+  }
+  .cf-q{font-size:14.5px; font-weight:700; line-height:1.7; margin-bottom:14px;}
+  .cf-options{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .cf-opt{
+    display:flex; flex-direction:column; gap:4px; text-align:left; cursor:pointer;
+    background:var(--panel-2); color:var(--white); border:1px solid var(--line); border-radius:14px; padding:16px;
+    font-family:inherit; transition:border-color .2s ease, background .2s ease, transform .2s ease;
+  }
+  .cf-opt:hover:not(:disabled), .cf-opt:focus-visible{border-color:var(--holo-b); background:#1d1d23;}
+  .cf-opt:active:not(:disabled){transform:scale(0.985);}
+  .cf-opt-label{font-size:14.5px; font-weight:700; line-height:1.5;}
+  .cf-opt-sub{font-size:12px; color:var(--sub); line-height:1.5;}
+  .cf-opt:disabled{cursor:default; opacity:0.45;}
+  .cf-opt.cf-chosen{opacity:1; border-color:var(--holo-b);}
+  .cf-result-title{font-family:'Unbounded', sans-serif; font-weight:800; font-size:clamp(18px, 3vw, 24px); line-height:1.4; margin-bottom:12px; outline:none;}
+  .cf-lead{font-size:13px; color:var(--sub); line-height:1.85; margin-bottom:18px;}
+  .cf-sec{padding:14px 0; border-top:1px solid var(--line);}
+  .cf-sec-head{display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; margin-bottom:8px;}
+  .cf-chip{width:7px; height:7px; border-radius:2px; background:var(--holo-grad); flex-shrink:0;}
+  .cf-sec-title{font-size:13px; font-weight:700; letter-spacing:0.04em;}
+  .cf-sec-note{font-size:12px; color:var(--sub);}
+  .cf-lines{list-style:none; display:flex; flex-direction:column; gap:4px;}
+  .cf-lines li{font-size:13px; line-height:1.75; padding-left:17px; position:relative; overflow-wrap:anywhere;}
+  .cf-lines li::before{content:''; position:absolute; left:2px; top:10px; width:5px; height:5px; border-radius:50%; background:var(--sub-dim);}
+  .cf-who{color:var(--holo-b); text-decoration:underline; text-decoration-color:rgba(185,142,255,0.4); text-underline-offset:3px; transition:color .2s ease;}
+  .cf-who:hover, .cf-who:focus-visible{color:var(--white);}
+  .cf-foot{font-size:12.5px; color:var(--sub); line-height:1.8; margin:6px 0 4px; padding-top:14px; border-top:1px solid var(--line);}
+  .cf-ctas{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;}
+  .cf-cta{
+    display:inline-flex; align-items:center; justify-content:center; text-align:center;
+    background:var(--white); color:var(--black); font-weight:700; font-size:13px; letter-spacing:0.03em;
+    padding:14px 22px; border-radius:100px; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cf-cta:hover, .cf-cta:focus-visible{transform:translateY(-2px); box-shadow:0 10px 26px -8px rgba(185,142,255,0.55);}
+  .cf-cta-sub{background:transparent; color:var(--white); border:1px solid var(--sub-dim); font-weight:500;}
+  .cf-cta-sub:hover, .cf-cta-sub:focus-visible{border-color:var(--white); box-shadow:none;}
+  .cf-ctanote{font-size:12px; color:var(--sub); margin-top:10px; line-height:1.7;}
+  .cf-extra{margin-top:22px; padding:18px 18px 20px; border:1px solid var(--line); border-left:2px solid var(--holo-b); border-radius:0 16px 16px 0; background:var(--panel-2);}
+  .cf-extra-title{font-size:13.5px; font-weight:700; line-height:1.6; margin-bottom:6px;}
+  .cf-extra .cf-sec:first-of-type{border-top:none; padding-top:6px;}
+  .cf-tools{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .cf-tools[hidden]{display:none;}
+  .cf-tool{
+    font-family:inherit; font-size:12.5px; color:var(--sub); background:transparent; cursor:pointer;
+    border:1px solid var(--line); border-radius:100px; padding:10px 18px; transition:color .2s ease, border-color .2s ease;
+  }
+  .cf-tool:hover, .cf-tool:focus-visible{color:var(--white); border-color:var(--sub);}
   /* ---------- classes / pricing ---------- */
   .class-grid{
     display:grid; grid-template-columns:repeat(5, 1fr); gap:1px;
@@ -783,7 +885,8 @@
     display:flex; gap:24px; padding-bottom:22px; border-bottom:1px solid var(--line);
   }
   .access-info dt{width:110px; font-size:12px; color:var(--sub-dim); letter-spacing:0.08em; flex-shrink:0; padding-top:2px;}
-  .access-info dd{font-size:15px; line-height:1.7;}
+  .access-info dd{font-size:15px; line-height:1.7; min-width:0; overflow-wrap:anywhere;}
+  .access-grid > *, .access-info .row{min-width:0;}
 
   /* ---------- CTA / contact ---------- */
   .contact{
@@ -867,7 +970,6 @@
     .about-grid{grid-template-columns:1fr;}
     .class-grid{grid-template-columns:repeat(2,1fr);}
     .class-grid > .class-card:last-child{grid-column:span 2;}
-    .diagnose-grid{grid-template-columns:1fr;}
     .info-panels{grid-template-columns:repeat(2,1fr);}
     .genre-note-panel{grid-template-columns:1fr;}
     .achievement-grid{grid-template-columns:repeat(2,1fr);}
@@ -875,7 +977,7 @@
     .dual-panel{grid-template-columns:1fr;}
     .results-grid{grid-template-columns:1fr 1fr;}
     .results-grid > .result-card:last-child{grid-column:span 2;}
-    .access-grid{grid-template-columns:1fr;}
+    .access-grid{grid-template-columns:minmax(0,1fr);}
     .artist-list{grid-template-columns:repeat(2,1fr);}
     .sendai-grid{grid-template-columns:1fr;}
     .enroll-grid{grid-template-columns:1fr;}
@@ -902,6 +1004,23 @@
     .news-list li > time{font-size:11.5px;}
     .news-list li > span{flex-basis:100%;}
     .news .wrap{padding:0 14px;}
+    .diagnose-hero{grid-template-columns:minmax(0,1fr); padding:26px 22px; border-radius:20px; gap:8px;}
+    .diagnose-hero-go{grid-column:1; grid-row:auto; margin-top:12px; text-align:center;}
+    /* クラス診断：スマホでは画面の上寄せで表示 */
+    .cf-dialog{align-items:flex-start; padding:12px 10px; padding-top:calc(env(safe-area-inset-top, 0px) + 12px);}
+    .cf-panel{
+      max-height:calc(100vh - 24px); max-height:calc(var(--cf-h, 100vh) - 24px);
+      max-height:calc(var(--cf-h, 100vh) - env(safe-area-inset-top, 0px) - 24px);
+    }
+    .cf-body{
+      max-height:calc(100vh - 24px - 66px); max-height:calc(var(--cf-h, 100vh) - 24px - 66px);
+      max-height:calc(var(--cf-h, 100vh) - env(safe-area-inset-top, 0px) - 24px - 66px);
+    }
+    .cf-body{padding:16px 12px calc(16px + env(safe-area-inset-bottom, 0px));}
+    .cf-bot .cf-bubble{padding:16px 14px 18px;}
+    .cf-options{grid-template-columns:1fr;}
+    .cf-cta{width:100%;}
+    .cf-fab{padding:12px 18px;}
   }
   @media (max-width:520px){
     .wrap{padding:0 20px;}
@@ -913,6 +1032,15 @@
     .results-grid > .result-card:last-child{grid-column:auto;}
     .hero-ig-grid{max-width:100%; gap:8px;}
     .nav{padding:16px 20px;}
+  }
+  /* 小さいスマホ（幅360px以下）：ヘッダーが画面からはみ出さないよう、余白と大きさを少しだけ詰める */
+  @media (max-width:360px){
+    .nav{padding:14px 14px;}
+    .nav-logo{gap:8px;}
+    .nav-logo-text{font-size:12px;}
+    .nav-right{gap:10px;}
+    .nav-instagram, .nav-line, .nav-youtube{width:30px; height:30px;}
+    .nav-instagram svg, .nav-line svg, .nav-youtube svg{width:16px; height:16px;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -1321,35 +1449,20 @@
   <!-- ============ CLASSES / PRICING ============ -->
   <section id="classes">
     <div class="wrap">
+      <div class="diagnose-panel">
+        <button type="button" class="diagnose-hero" data-cf-open="inline" aria-haspopup="dialog">
+          <span class="diagnose-hero-eyebrow">あなたはどのクラス？</span>
+          <span class="diagnose-hero-title">チャットで診断する</span>
+          <span class="diagnose-hero-sub">いくつかの質問に答えるだけで、おすすめのクラスと体験の申込方法をご案内します。</span>
+          <span class="diagnose-hero-go">診断をはじめる →</span>
+        </button>
+      </div>
+
       <div class="sec-head">
         <div>
           <h2 class="sec-title">料金システム<span class="sec-title-sub"><span class="sep">｜</span>新宿のK-POPダンス教室</span></h2>
         </div>
         <div class="sec-desc">目的別に選べる5つのクラス。アイドル・ダンサーを本気で目指す人から、趣味で楽しく学びたい人まで。すべて税込価格。</div>
-      </div>
-
-      <div class="diagnose-panel">
-        <div class="diagnose-label mono">→ あなたはどのクラス？</div>
-        <div class="diagnose-grid">
-          <div class="diagnose-row">
-            <div class="diagnose-q">趣味で楽しく踊りたい</div>
-            <div class="diagnose-a">
-              <span>OPEN CLASS</span>
-              <span>Kids / Jr. CLASS</span>
-            </div>
-          </div>
-          <div class="diagnose-row">
-            <div class="diagnose-q">撮影やイベントを楽しみたい</div>
-            <div class="diagnose-a"><span>UNIT CLASS</span></div>
-          </div>
-          <div class="diagnose-row">
-            <div class="diagnose-q">本気で上達したい</div>
-            <div class="diagnose-a">
-              <span>NAL Kids TRAINEE</span>
-              <span>NAL TRAINEE</span>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="class-grid">
@@ -1952,9 +2065,28 @@
   </div>
 </footer>
 
+<!-- クラス診断（チャット） -->
+<button type="button" class="cf-fab" data-cf-open="fab" aria-haspopup="dialog">クラス診断</button>
+<div id="cf-dialog" class="cf-dialog" role="dialog" aria-modal="true" aria-labelledby="cf-dialog-title" hidden>
+  <div class="cf-panel" id="cf-panel" tabindex="-1">
+    <div class="cf-dialog-head">
+      <h2 id="cf-dialog-title" class="cf-dialog-title">クラス診断</h2>
+      <button type="button" id="cf-close" class="cf-close" aria-label="閉じる">×</button>
+    </div>
+    <div class="cf-body" id="cf-body">
+      <div id="cf-log" class="cf-log" aria-live="polite"></div>
+      <div id="cf-tools" class="cf-tools" hidden>
+        <button type="button" id="cf-back" class="cf-tool">← ひとつ前に戻る</button>
+        <button type="button" id="cf-reset" class="cf-tool">最初からやり直す</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/nav.js" defer></script>
 <script src="js/instagram.js" defer></script>
 <script src="js/news-fit.js" defer></script>
+<script src="js/class-finder.js" defer></script>
 
 </body>
 </html>

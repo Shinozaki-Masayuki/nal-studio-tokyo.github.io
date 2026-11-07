@@ -20,6 +20,7 @@
 - [INFO](https://nalstudio-tokyo.com/info.html): 代表（SEUN／島中 駿）と広報（篠崎 真之）の連絡先
 - [NEWS](https://nalstudio-tokyo.com/#news): 最新のお知らせ3件（メディア出演・取材、オーディション開催など）
 - [NEWS一覧](https://nalstudio-tokyo.com/news.html): 過去分を含むお知らせの一覧
+- [クラス診断](https://nalstudio-tokyo.com/#classes): トップページの「あなたはどのクラス？」から開く、チャット形式の診断（目的と経験を選ぶと、おすすめのクラス・時間割・月謝・体験の申込方法を案内）
 - [料金システム](https://nalstudio-tokyo.com/#classes): クラスごとの料金
 - [講師一覧](https://nalstudio-tokyo.com/#instructor): インストラクター17名のプロフィール
 - [アクセス](https://nalstudio-tokyo.com/#access): 地図・最寄り駅
