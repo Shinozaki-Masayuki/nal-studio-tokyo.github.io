@@ -542,13 +542,19 @@
   .cf-fab:hover, .cf-fab:focus-visible{box-shadow:0 12px 30px -6px rgba(185,142,255,0.55), 0 0 0 1px rgba(255,255,255,0.2);}
   html.cf-lock{overflow:hidden;}
 
-  .cf-dialog{border:none; padding:0; background:transparent; color:var(--white); max-width:none; max-height:none;}
-  .cf-dialog[open]{
-    display:flex; flex-direction:column; margin:auto; width:min(720px, calc(100% - 24px)); max-height:min(88vh, 880px);
-    background:var(--panel-2); border:1px solid var(--line); border-radius:24px; overflow:hidden;
+  /* ポップアップ：<dialog> に頼らず、どのスマホ・ブラウザでも開く通常の重ね表示 */
+  .cf-dialog{
+    position:fixed; top:0; right:0; bottom:0; left:0; z-index:900;
+    display:flex; align-items:center; justify-content:center; padding:24px;
+    background:rgba(4,4,6,0.78); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+    color:var(--white);
   }
-  .cf-dialog:focus{outline:none;}
-  .cf-dialog::backdrop{background:rgba(4,4,6,0.74); backdrop-filter:blur(4px);}
+  .cf-dialog[hidden]{display:none;}
+  .cf-panel{
+    display:flex; flex-direction:column; width:100%; max-width:720px;
+    max-height:88vh; max-height:calc(var(--cf-h, 100vh) * 0.88);
+    background:var(--panel-2); border:1px solid var(--line); border-radius:24px; overflow:hidden; outline:none;
+  }
   .cf-dialog-head{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 14px 14px 22px; border-bottom:1px solid var(--line); flex-shrink:0;}
   .cf-dialog-title{font-family:'Unbounded', sans-serif; font-weight:800; font-size:14px; letter-spacing:0.04em;}
   .cf-close{
@@ -557,8 +563,12 @@
     border:1px solid var(--line); border-radius:50%; transition:color .2s ease, border-color .2s ease;
   }
   .cf-close:hover, .cf-close:focus-visible{color:var(--white); border-color:var(--sub);}
-  .cf-body{flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:22px; scrollbar-width:thin; scrollbar-color:#3a3a42 transparent;}
-  .cf-log{display:flex; flex-direction:column; gap:18px;}
+  /* flex:1 1 auto（0%ではなくauto）にして、iPhoneのSafariで本文が潰れないようにする */
+  .cf-body{flex:1 1 auto; min-height:0; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; padding:22px; scrollbar-width:thin; scrollbar-color:#3a3a42 transparent;}
+  .cf-body{max-height:calc(88vh - 66px); max-height:calc(var(--cf-h, 100vh) * 0.88 - 66px);}
+  .cf-dialog-head{flex:0 0 auto;}
+  .cf-log{display:flex; flex-direction:column;}
+  .cf-log > .cf-row + .cf-row{margin-top:18px;}
   .cf-row{display:flex;}
   .cf-user{justify-content:flex-end;}
   .cf-bubble{max-width:100%; min-width:0;}
@@ -1013,11 +1023,14 @@
     .diagnose-hero{grid-template-columns:minmax(0,1fr); padding:26px 22px; border-radius:20px; gap:8px;}
     .diagnose-hero-go{grid-column:1; grid-row:auto; margin-top:12px; text-align:center;}
     /* クラス診断：スマホでは画面の上寄せで表示 */
-    .cf-dialog[open]{
-      margin:calc(env(safe-area-inset-top, 0px) + 12px) auto auto; width:calc(100% - 20px); max-width:100%;
-      max-height:calc(100vh - env(safe-area-inset-top, 0px) - 24px);
-      max-height:calc(100dvh - env(safe-area-inset-top, 0px) - 24px);
-      border-radius:24px;
+    .cf-dialog{align-items:flex-start; padding:12px 10px; padding-top:calc(env(safe-area-inset-top, 0px) + 12px);}
+    .cf-panel{
+      max-height:calc(100vh - 24px); max-height:calc(var(--cf-h, 100vh) - 24px);
+      max-height:calc(var(--cf-h, 100vh) - env(safe-area-inset-top, 0px) - 24px);
+    }
+    .cf-body{
+      max-height:calc(100vh - 24px - 66px); max-height:calc(var(--cf-h, 100vh) - 24px - 66px);
+      max-height:calc(var(--cf-h, 100vh) - env(safe-area-inset-top, 0px) - 24px - 66px);
     }
     .cf-body{padding:16px 12px calc(16px + env(safe-area-inset-bottom, 0px));}
     .cf-bot .cf-bubble{padding:16px 14px 18px;}
@@ -2088,19 +2101,21 @@
 
 <!-- クラス診断（チャット） -->
 <button type="button" class="cf-fab" data-cf-open="fab" aria-haspopup="dialog">クラス診断</button>
-<dialog id="cf-dialog" class="cf-dialog" aria-labelledby="cf-dialog-title" tabindex="-1">
-  <div class="cf-dialog-head">
-    <h2 id="cf-dialog-title" class="cf-dialog-title">クラス診断</h2>
-    <button type="button" id="cf-close" class="cf-close" aria-label="閉じる">×</button>
-  </div>
-  <div class="cf-body" id="cf-body">
-    <div id="cf-log" class="cf-log" aria-live="polite"></div>
-    <div id="cf-tools" class="cf-tools" hidden>
-      <button type="button" id="cf-back" class="cf-tool">← ひとつ前に戻る</button>
-      <button type="button" id="cf-reset" class="cf-tool">最初からやり直す</button>
+<div id="cf-dialog" class="cf-dialog" role="dialog" aria-modal="true" aria-labelledby="cf-dialog-title" hidden>
+  <div class="cf-panel" id="cf-panel" tabindex="-1">
+    <div class="cf-dialog-head">
+      <h2 id="cf-dialog-title" class="cf-dialog-title">クラス診断</h2>
+      <button type="button" id="cf-close" class="cf-close" aria-label="閉じる">×</button>
+    </div>
+    <div class="cf-body" id="cf-body">
+      <div id="cf-log" class="cf-log" aria-live="polite"></div>
+      <div id="cf-tools" class="cf-tools" hidden>
+        <button type="button" id="cf-back" class="cf-tool">← ひとつ前に戻る</button>
+        <button type="button" id="cf-reset" class="cf-tool">最初からやり直す</button>
+      </div>
     </div>
   </div>
-</dialog>
+</div>
 
 <script src="js/nav.js" defer></script>
 <script src="js/instagram.js" defer></script>
