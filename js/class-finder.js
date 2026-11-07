@@ -227,7 +227,8 @@
   }
 
   function load() {
-    fetch(DATA_URL)
+    // 文章を直したらすぐ反映されるよう、ブラウザに古いデータを使わせない（GitHub Pagesは通常10分間キャッシュさせる）
+    fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-cache' })
       .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
       .then(function (json) { data = json; render(false); })
       .catch(showError);
