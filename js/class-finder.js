@@ -260,7 +260,9 @@
     // 開いた直後は、×ボタンに枠が出ないよう、パネル自体にフォーカスを置く
     try { panel.focus({ preventScroll: true }); } catch (e) { panel.focus(); }
     track('class_finder_open', { source: (trigger && trigger.getAttribute('data-cf-open')) || '' });
-    if (!data) load();
+    // 開くたびに、最初の質問から始める（前回の結果画面を残さない）
+    stack = [];
+    if (data) { render(false); } else { load(); }
   }
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-cf-open]'), function (btn) {
