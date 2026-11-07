@@ -249,6 +249,8 @@
     } else {
       dialog.setAttribute('open', '');
     }
+    // 開いた直後は、×ボタンに枠が出ないよう、パネル自体にフォーカスを置く
+    dialog.focus({ preventScroll: true });
     document.documentElement.classList.add('cf-lock');
     track('class_finder_open', { source: (trigger && trigger.getAttribute('data-cf-open')) || '' });
     if (!data) load();
