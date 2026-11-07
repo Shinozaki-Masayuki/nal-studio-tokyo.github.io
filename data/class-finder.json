@@ -73,7 +73,24 @@
         { "type": "line", "label": "LINEで「スキルチェック申込」を送る", "message": "スキルチェック申込" },
         { "type": "page", "label": "スキルチェックの詳細を見る", "url": "#skillcheck" }
       ],
-      "ctaNote": "受付方法はLINEでご案内します。"
+      "ctaNote": "受付方法はLINEでご案内します。",
+      "extra": {
+        "title": "ダンスを特技としたアイドルを目指している方には、OPEN CLASSの経験者向けクラスも一緒に受けるのがおすすめです！",
+        "sections": [
+          { "heading": "K-POP", "lines": ["水 20:40 REMI", "土 13:10 YUKi", "土 16:10 HAYATARO"] },
+          { "heading": "R&B / HIPHOP", "lines": ["金 20:40 TOGASHI"] },
+          { "heading": "HIPHOP / R&B", "lines": ["日 19:30 TAICHI"] },
+          { "heading": "Girls HIPHOP", "lines": ["土 17:40 REMI", "土 19:10 Rina"] },
+          { "heading": "HIPHOP", "lines": ["土 20:40 KUMA", "日 21:00 SE1TAROW"] },
+          { "heading": "JAZZ FUNK", "lines": ["日 18:00 はっぴーがーる"] },
+          { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料", "両方受けても入会金は1回分だけ！"] },
+          { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
+        ],
+        "ctas": [
+          { "type": "link", "label": "体験チケットを購入", "linkKey": "ticket" },
+          { "type": "link", "label": "クラスを予約", "linkKey": "booking" }
+        ]
+      }
     },
     "dancer_beginner": {
       "title": "OPEN CLASS または NAL TRAINEE C の体験",
@@ -98,19 +115,35 @@
       }
     },
     "dancer_exp": {
-      "title": "TRAINEE for Dancers",
-      "lead": "トレーニーAレベルの方が対象のクラスです！",
+      "title": "TRAINEE for Dancers、NAL TRAINEE A、OPEN CLASS",
+      "lead": "",
       "sections": [
-        { "heading": "時間割", "lines": ["木 19:10 syoui（80分）"] },
-        { "heading": "参加条件", "lines": ["スキルチェック、またはsyouiの許可"] },
+        { "heading": "TRAINEE for Dancers", "note": "トレーニーAレベルの方が対象", "lines": ["木 19:10 syoui（80分）", "参加条件：スキルチェック、またはsyouiの許可", "案件がある際に、ダミーダンサーやバックダンサーの機会があります！"] },
+        { "heading": "NAL TRAINEE A", "note": "毎月の動画撮影、作品制作", "lines": ["月 20:40 REMI", "木 20:40 SEUN", "3か月に1回、韓国芸能事務所への資料送付や対面オーディションの機会があります！", "スキルチェックの結果で、スタートするクラス（C / B / A）が決まります！"] },
         { "heading": "月謝", "lines": ["月4回 ¥15,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] }
       ],
-      "footnote": "NAL TRAINEE for Dancersのクラスでは、案件がある際にダミーダンサーやバックダンサーの機会があります！",
       "ctas": [
         { "type": "line", "label": "LINEで「スキルチェック申込」を送る", "message": "スキルチェック申込" },
         { "type": "page", "label": "スキルチェックの詳細を見る", "url": "#skillcheck" }
       ],
-      "ctaNote": "受付方法はLINEでご案内します。"
+      "ctaNote": "受付方法はLINEでご案内します。",
+      "extra": {
+        "title": "OPEN CLASS｜経験者の方におすすめ",
+        "sections": [
+          { "heading": "K-POP", "lines": ["水 20:40 REMI", "土 13:10 YUKi", "土 16:10 HAYATARO"] },
+          { "heading": "R&B / HIPHOP", "lines": ["金 20:40 TOGASHI"] },
+          { "heading": "HIPHOP / R&B", "lines": ["日 19:30 TAICHI"] },
+          { "heading": "Girls HIPHOP", "lines": ["土 17:40 REMI", "土 19:10 Rina"] },
+          { "heading": "HIPHOP", "lines": ["土 20:40 KUMA", "日 21:00 SE1TAROW"] },
+          { "heading": "JAZZ FUNK", "lines": ["日 18:00 はっぴーがーる"] },
+          { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料", "TRAINEEと両方受けても入会金は1回分だけ！"] },
+          { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
+        ],
+        "ctas": [
+          { "type": "link", "label": "体験チケットを購入", "linkKey": "ticket" },
+          { "type": "link", "label": "クラスを予約", "linkKey": "booking" }
+        ]
+      }
     },
     "hobby_beginner": {
       "title": "K-POP超初心者クラス",
