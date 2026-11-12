@@ -339,6 +339,7 @@
     transform:translateY(-1px);
   }
   .news-list li > span{min-width:0; overflow-wrap:break-word; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block;}
+  .news-list li > span.is-wrap{white-space:normal; overflow:visible; text-overflow:clip;}
   .news-list a{
     text-decoration:underline; text-decoration-color:var(--sub-dim); text-underline-offset:4px;
     transition:color .25s ease, text-decoration-color .25s ease;
@@ -1309,9 +1310,9 @@
 
       <!-- 最新3件のみ掲載。それ以前は news.html（一覧）へ。 -->
       <ul class="news-list">
+        <li><time class="mono" datetime="2026-11-12">2026.11.12</time><span><a href="https://www.instagram.com/p/DfobnbrA55z/" target="_blank" rel="noopener">韓国芸能事務所 BLUEDOT 対面オーディション開催！</a></span></li>
         <li><time class="mono" datetime="2026-11-04">2026.11.04</time><span><a href="https://www.j-wave.co.jp/original/stepone/workers/15130.html" target="_blank" rel="noopener">J-WAVE「STEP ONE」に代表SEUNが出演しました</a></span></li>
         <li><time class="mono" datetime="2026-10-31">2026.10.31</time><span><a href="https://www.instagram.com/p/Ddn8FC0Afpm/?stkn=MTJvYzVqNWVoeGZ3Nw==" target="_blank" rel="noopener">P NATION対面オーディションを開催しました</a></span></li>
-        <li><time class="mono" datetime="2026-10-31">2026.10.31</time><span><a href="https://www.instagram.com/p/Ddn9udtoBe6/?stkn=MXkwaW1ldHh2bmthNA==" target="_blank" rel="noopener">MODHAUS対面オーディションを開催しました</a></span></li>
       </ul>
       <div class="news-more"><a href="news.html">過去のNEWS一覧 →</a></div>
     </div>
