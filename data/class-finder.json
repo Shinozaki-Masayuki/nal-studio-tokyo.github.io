@@ -79,9 +79,9 @@
         "sections": [
           { "heading": "K-POP", "lines": ["水 20:40 REMI", "土 13:10 YUKi", "土 16:10 HAYATARO"] },
           { "heading": "R&B / HIPHOP", "lines": ["金 20:40 TOGASHI"] },
-          { "heading": "HIPHOP / R&B", "lines": ["日 19:30 TAICHI"] },
+          { "heading": "HIPHOP / R&B", "lines": ["日 19:30 Taich_i"] },
           { "heading": "Girls HIPHOP", "lines": ["土 17:40 REMI", "土 19:10 Rina"] },
-          { "heading": "HIPHOP", "lines": ["土 20:40 KUMA", "日 21:00 SE1TAROW"] },
+          { "heading": "HIPHOP", "lines": ["土 20:40 kuma", "日 21:00 SE1TAROW"] },
           { "heading": "JAZZ FUNK", "lines": ["日 18:00 はっぴーがーる"] },
           { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料", "両方受けても入会金は1回分だけ！"] },
           { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
@@ -96,7 +96,7 @@
       "title": "OPEN CLASS または NAL TRAINEE C の体験",
       "lead": "好きなジャンルを見つけたい方はOPEN CLASS、基礎から本気で学びたい方はTRAINEE Cがおすすめです！",
       "sections": [
-        { "heading": "OPEN CLASS", "lines": ["K-POP超初心者 火 20:40 HAYATARO", "K-POP 水 17:40 Remon", "R&B 金 17:40 Yamakazu", "K-POP 日 16:30 Nönöka"] },
+        { "heading": "OPEN CLASS", "lines": ["K-POP超初心者 火 20:40 HAYATARO", "K-POP 水 17:40 Remon", "R&B 金 17:40 yamakazu", "K-POP 日 16:30 Nönöka"] },
         { "heading": "OPEN CLASSの体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
       ],
       "ctas": [
@@ -132,9 +132,9 @@
         "sections": [
           { "heading": "K-POP", "lines": ["水 20:40 REMI", "土 13:10 YUKi", "土 16:10 HAYATARO"] },
           { "heading": "R&B / HIPHOP", "lines": ["金 20:40 TOGASHI"] },
-          { "heading": "HIPHOP / R&B", "lines": ["日 19:30 TAICHI"] },
+          { "heading": "HIPHOP / R&B", "lines": ["日 19:30 Taich_i"] },
           { "heading": "Girls HIPHOP", "lines": ["土 17:40 REMI", "土 19:10 Rina"] },
-          { "heading": "HIPHOP", "lines": ["土 20:40 KUMA", "日 21:00 SE1TAROW"] },
+          { "heading": "HIPHOP", "lines": ["土 20:40 kuma", "日 21:00 SE1TAROW"] },
           { "heading": "JAZZ FUNK", "lines": ["日 18:00 はっぴーがーる"] },
           { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料", "TRAINEEと両方受けても入会金は1回分だけ！"] },
           { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
@@ -150,7 +150,7 @@
       "lead": "",
       "sections": [
         { "heading": "時間割", "lines": ["火 20:40〜22:00 HAYATARO"] },
-        { "heading": "ほかのおすすめ", "lines": ["K-POP 水 17:40 Remon", "R&B 金 17:40 Yamakazu", "K-POP 日 16:30 Nönöka"] },
+        { "heading": "ほかのおすすめ", "lines": ["K-POP 水 17:40 Remon", "R&B 金 17:40 yamakazu", "K-POP 日 16:30 Nönöka"] },
         { "heading": "土日に通いたい方", "note": "未経験でも受講できます", "lines": ["土 13:10 YUKi", "土 16:10 HAYATARO", "日 16:30 Nönöka"] },
         { "heading": "お母さん向け", "lines": ["ママ's K-POP 日 11:10 konomi", "Kids / Jr.の月謝（月2回 ¥5,000〜）で受講できます"] },
         { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料", "未消化分は5か月先まで繰り越せます✨"] },
@@ -167,9 +167,9 @@
       "sections": [
         { "heading": "K-POP", "lines": ["水 20:40 REMI", "土 13:10 YUKi", "土 16:10 HAYATARO"] },
         { "heading": "R&B / HIPHOP", "lines": ["金 20:40 TOGASHI"] },
-        { "heading": "HIPHOP / R&B", "lines": ["日 19:30 TAICHI"] },
+        { "heading": "HIPHOP / R&B", "lines": ["日 19:30 Taich_i"] },
         { "heading": "Girls HIPHOP", "lines": ["土 17:40 REMI", "土 19:10 Rina"] },
-        { "heading": "HIPHOP", "lines": ["土 20:40 KUMA", "日 21:00 SE1TAROW"] },
+        { "heading": "HIPHOP", "lines": ["土 20:40 kuma", "日 21:00 SE1TAROW"] },
         { "heading": "JAZZ FUNK", "lines": ["日 18:00 はっぴーがーる"] },
         { "heading": "月謝", "lines": ["月2回 ¥6,000〜", "入会金 ¥5,000（キャンペーン価格・通常 ¥10,000）", "NAL FRIEND CAMPAIGN（友達紹介）：友だちが通っている方は入会金無料"] },
         { "heading": "体験の始め方", "lines": ["1. 体験チケット（¥1,500・入会前の方1回限り）を購入", "2. 受けたいクラスを予約"] }
