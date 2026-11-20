@@ -9,9 +9,9 @@
   // 時間割の講師名 → 講師ページ
   var INSTRUCTORS = {
     'SEUN': 'seun', 'REMI': 'remi', 'yuko': 'yuko', 'YUKi': 'yuki', 'HAYATARO': 'hayataro',
-    'konomi': 'konomi', 'syoui': 'syoui', 'Remon': 'remon', 'Nönöka': 'nonoka', 'TAICHI': 'taichi',
-    'KUMA': 'kuma', 'TOGASHI': 'togashi', 'Rina': 'rina', 'はっぴーがーる': 'happygirl',
-    'LIN': 'lin', 'Yamakazu': 'yamakazu', 'SE1TAROW': 'se1tarow'
+    'konomi': 'konomi', 'syoui': 'syoui', 'Remon': 'remon', 'Nönöka': 'nonoka', 'Taich_i': 'taichi',
+    'kuma': 'kuma', 'TOGASHI': 'togashi', 'Rina': 'rina', 'はっぴーがーる': 'happygirl',
+    'LIN': 'lin', 'yamakazu': 'yamakazu', 'SE1TAROW': 'se1tarow'
   };
 
   var NAME_RE = new RegExp('(' + Object.keys(INSTRUCTORS)
