@@ -54,13 +54,13 @@
 - [syoui](https://nalstudio-tokyo.com/instructor_syoui.html): インストラクター。プロフィールと出演・指導経歴
 - [Remon](https://nalstudio-tokyo.com/instructor_remon.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @laliluremo_n
 - [Nönöka](https://nalstudio-tokyo.com/instructor_nonoka.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @02nonoflower_11
-- [TAICHI](https://nalstudio-tokyo.com/instructor_taichi.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @taich___i
-- [KUMA](https://nalstudio-tokyo.com/instructor_kuma.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @ikumaaaaaaa
+- [Taich_i](https://nalstudio-tokyo.com/instructor_taichi.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @taich___i
+- [kuma](https://nalstudio-tokyo.com/instructor_kuma.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @ikumaaaaaaa
 - [TOGASHI](https://nalstudio-tokyo.com/instructor_togashi.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @togasi_2.21
 - [Rina](https://nalstudio-tokyo.com/instructor_rina.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @rina__mzg
 - [はっぴーがーる](https://nalstudio-tokyo.com/instructor_happygirl.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @happygirlrina
 - [LIN](https://nalstudio-tokyo.com/instructor_lin.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @lqxinx
-- [Yamakazu](https://nalstudio-tokyo.com/instructor_yamakazu.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @yamakazu.123
+- [yamakazu](https://nalstudio-tokyo.com/instructor_yamakazu.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @yamakazu.123
 - [SE1TAROW](https://nalstudio-tokyo.com/instructor_se1tarow.html): インストラクター。プロフィールと出演・指導経歴、Instagram: @se1tarow_15
 
 ## レンタルスタジオ
